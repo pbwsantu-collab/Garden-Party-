@@ -1,3 +1,6 @@
+/* ==========================================
+   ROOT VARIABLES & THEMING
+   ========================================== */
 :root {
     --bg-color: #fdfbf7;
     --text-color: #2c2c2c;
@@ -5,20 +8,39 @@
     --light-green: #e8f0e6;
     --accent-gold: #d4af37;
     --card-bg: #ffffff;
+    --border-color: #e0e0e0;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --border-radius: 12px;
     --font-en: 'Merriweather', serif;
     --font-bn: 'Noto Sans Bengali', sans-serif;
     --font-ui: 'Inter', sans-serif;
-    --font-size-base: 17px;
-    --line-height: 1.7;
+    
+    /* TTS Highlighting */
+    --highlight-bg: #fff3cd;
+    --highlight-border: #ffc107;
 }
 
+/* Dark Mode (Optional - can be toggled) */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-green: #4a7c44;
+    --light-green: #2a3a28;
+    --card-bg: #2c2c2c;
+    --border-color: #444;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --highlight-bg: #4a3b00;
+    --highlight-border: #ffc107;
+}
+
+/* ==========================================
+   GLOBAL RESETS & BASE STYLES
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
 }
 
 body {
@@ -28,9 +50,17 @@ body {
     line-height: 1.5;
     overflow-x: hidden;
     padding-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* HEADER */
+button, select, input {
+    font-family: inherit;
+    outline: none;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
 #app-header {
     position: sticky;
     top: 0;
@@ -48,11 +78,12 @@ body {
     font-family: var(--font-en);
     font-size: 1.2rem;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 #app-subtitle {
     font-size: 0.8rem;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 #menu-btn {
@@ -61,9 +92,12 @@ body {
     color: white;
     font-size: 1.8rem;
     cursor: pointer;
+    padding: 0 5px;
 }
 
-/* SCREENS */
+/* ==========================================
+   SCREENS
+   ========================================== */
 .screen {
     display: none;
     padding: 16px;
@@ -79,7 +113,9 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* HOME SCREEN */
+/* ==========================================
+   HOME SCREEN
+   ========================================== */
 .hero-card {
     background: linear-gradient(135deg, var(--primary-green), #4a7c44);
     color: white;
@@ -111,7 +147,7 @@ body {
 
 .menu-card {
     background: var(--card-bg);
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 16px 10px;
     text-align: center;
@@ -120,6 +156,7 @@ body {
     box-shadow: var(--shadow);
     transition: transform 0.2s, background 0.2s;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .menu-card:active {
@@ -127,7 +164,9 @@ body {
     background: var(--light-green);
 }
 
-/* READER TOOLBAR */
+/* ==========================================
+   READER TOOLBAR
+   ========================================== */
 .toolbar {
     display: flex;
     flex-direction: column;
@@ -140,6 +179,7 @@ body {
     position: sticky;
     top: 60px;
     z-index: 50;
+    border: 1px solid var(--border-color);
 }
 
 .page-nav, .reader-controls {
@@ -152,9 +192,10 @@ body {
 
 .toolbar button, .toolbar select {
     padding: 6px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
-    background: #f9f9f9;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-size: 0.85rem;
     cursor: pointer;
 }
@@ -169,32 +210,58 @@ body {
     color: var(--primary-green);
 }
 
-/* READER CONTENT */
+/* ==========================================
+   READER CONTENT
+   ========================================== */
 .reader-content {
     background: var(--card-bg);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     font-family: var(--font-en);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height);
+    font-size: 17px; /* Base font size, controlled by JS */
+    line-height: 1.7;
     min-height: 60vh;
+    border: 1px solid var(--border-color);
 }
 
 .reader-content p {
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
     text-align: justify;
 }
 
+.reader-heading {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    margin: 20px 0 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.reader-subheading {
+    font-family: var(--font-en);
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    margin: 15px 0 8px 0;
+}
+
+.dialogue {
+    padding-left: 15px;
+    border-left: 3px solid var(--light-green);
+}
+
+/* BENGALI TEXT BLOCK */
 .bengali-text {
     font-family: var(--font-bn);
     font-size: 0.95em;
-    color: #444;
+    color: var(--text-color);
     background: var(--light-green);
-    padding: 8px 12px;
+    padding: 10px 12px;
     border-radius: 8px;
-    margin: 8px 0;
+    margin: 8px 0 16px 0;
     line-height: 1.6;
+    display: block;
 }
 
 /* CLICKABLE WORDS */
@@ -202,32 +269,60 @@ body {
     cursor: pointer;
     padding: 1px 2px;
     border-radius: 3px;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
     display: inline-block;
+    border-bottom: 1px dotted transparent;
 }
 
-.word-clickable:active {
+.word-clickable:hover, .word-clickable:active {
     background-color: var(--accent-gold);
     color: white;
+    border-bottom-color: white;
 }
 
-.footnote-ref {
-    font-size: 0.7em;
-    vertical-align: super;
-    color: var(--primary-green);
-    font-weight: bold;
+/* FOOTNOTES */
+.footnotes-section {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.9em;
+    color: #666;
 }
 
-/* MODAL */
+[data-theme="dark"] .footnotes-section {
+    color: #aaa;
+}
+
+.footnote {
+    margin-bottom: 5px;
+}
+
+/* ==========================================
+   TTS HIGHLIGHTING
+   ========================================== */
+.reading-now {
+    background-color: var(--highlight-bg) !important;
+    border-left: 4px solid var(--highlight-border) !important;
+    padding: 4px 8px;
+    margin-left: -8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-left 0.3s ease;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+}
+
+/* ==========================================
+   WORD MEANING MODAL
+   ========================================== */
 .modal {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     z-index: 200;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 16px;
+    backdrop-filter: blur(2px);
 }
 
 .modal.hidden {
@@ -235,7 +330,7 @@ body {
 }
 
 .modal-content {
-    background: white;
+    background: var(--card-bg);
     padding: 24px;
     border-radius: var(--border-radius);
     width: 100%;
@@ -243,6 +338,7 @@ body {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     animation: slideUp 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 @keyframes slideUp {
@@ -265,6 +361,7 @@ body {
     color: var(--primary-green);
     font-size: 1.6rem;
     margin-bottom: 4px;
+    text-transform: capitalize;
 }
 
 .modal-bn {
@@ -278,17 +375,19 @@ body {
 .modal-details p {
     font-size: 0.95rem;
     margin-bottom: 6px;
-    color: #444;
+    color: var(--text-color);
 }
 
 .context-meaning {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed var(--border-color);
     color: var(--primary-green);
 }
 
-/* OVERLAY MENU */
+/* ==========================================
+   NAVIGATION OVERLAY
+   ========================================== */
 .overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -303,7 +402,7 @@ body {
 }
 
 .overlay-content {
-    background: white;
+    background: var(--card-bg);
     width: 80%;
     max-width: 300px;
     height: 100%;
@@ -313,6 +412,7 @@ body {
     gap: 10px;
     animation: slideIn 0.3s ease;
     overflow-y: auto;
+    border-left: 1px solid var(--border-color);
 }
 
 @keyframes slideIn {
@@ -326,11 +426,12 @@ body {
     border: none;
     font-size: 2rem;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .nav-link {
-    background: #f5f5f5;
-    border: none;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
     padding: 15px;
     text-align: left;
     font-size: 1rem;
@@ -338,13 +439,16 @@ body {
     cursor: pointer;
     font-weight: 600;
     color: var(--text-color);
+    transition: background 0.2s;
 }
 
 .nav-link:active {
     background: var(--light-green);
 }
 
-/* LISTS & CARDS */
+/* ==========================================
+   LISTS & CARDS (SAQ, Broad, Characters, Themes, Symbols)
+   ========================================== */
 .list-container {
     display: flex;
     flex-direction: column;
@@ -357,48 +461,98 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     border-left: 4px solid var(--primary-green);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .list-item h3 {
     font-family: var(--font-en);
     font-size: 1.1rem;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: var(--primary-green);
+    line-height: 1.4;
 }
 
 .list-item p {
     font-size: 0.95rem;
     margin-bottom: 6px;
+    line-height: 1.6;
 }
 
 .bn-text {
     font-family: var(--font-bn);
     font-size: 0.95rem;
-    color: #555;
-    background: #f0f5ef;
-    padding: 8px;
+    color: var(--text-color);
+    background: var(--light-green);
+    padding: 8px 12px;
     border-radius: 6px;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
-/* SEARCH */
+/* Question Labels */
+.q-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.q-label {
+    font-size: 0.75rem;
+    background: var(--primary-green);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.q-important {
+    font-size: 0.75rem;
+    background: var(--accent-gold);
+    color: #2c2c2c;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.answer-box {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+}
+
+/* ==========================================
+   SEARCH BAR
+   ========================================== */
 .search-bar {
     margin-bottom: 16px;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    box-shadow: var(--shadow);
 }
 
-/* PROGRESS */
+/* ==========================================
+   PROGRESS SCREEN
+   ========================================== */
+.progress-card {
+    text-align: center;
+}
+
 .progress-bar {
     width: 100%;
     height: 12px;
-    background: #e0e0e0;
+    background: var(--border-color);
     border-radius: 6px;
     margin: 8px 0 16px 0;
     overflow: hidden;
@@ -408,24 +562,47 @@ body {
     height: 100%;
     background: var(--primary-green);
     transition: width 0.5s ease;
+    border-radius: 6px;
 }
 
-/* BILINGUAL TOGGLE */
-.bn-hidden { display: none !important; }
-.en-hidden { display: none !important; }
+.empty-msg {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+}
 
-/* RESPONSIVE */
+/* ==========================================
+   RESPONSIVE DESIGN (TABLET & DESKTOP)
+   ========================================== */
 @media (min-width: 600px) {
-    .grid-menu { grid-template-columns: 1fr 1fr 1fr; }
-    #app-container { max-width: 800px; margin: 0 auto; }
-    .toolbar { flex-direction: row; justify-content: space-between; }
-    .reader-content { padding: 40px; font-size: 19px; }
+    .grid-menu { 
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+    
+    #app-container { 
+        max-width: 800px; 
+        margin: 0 auto; 
+    }
+    
+    .toolbar { 
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+    
+    .reader-content { 
+        padding: 40px; 
+        font-size: 19px; 
+    }
+    
+    .modal-content {
+        max-width: 500px;
+    }
 }
-.reading-now {
-    background-color: #fff3cd !important; /* Soft yellow */
-    border-left: 4px solid #ffc107 !important;
-    transition: background-color 0.3s ease, border-left 0.3s ease;
-    border-radius: 4px;
-    padding: 4px 8px;
-    margin-left: -8px;
+
+@media (min-width: 900px) {
+    #app-container {
+        max-width: 900px;
+    }
     }
