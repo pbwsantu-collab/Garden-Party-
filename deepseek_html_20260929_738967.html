@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Garden Party - Bilingual Study App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2d5a27">
+    <!-- Google Fonts for Bengali & English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Noto+Sans+Bengali:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="app-header">
+        <div class="header-content">
+            <h1 id="app-title">The Garden Party</h1>
+            <p id="app-subtitle">Katherine Mansfield</p>
+        </div>
+        <button id="menu-btn" aria-label="Menu">☰</button>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main id="app-container">
+        <!-- Home Screen -->
+        <section id="home-screen" class="screen active">
+            <div class="hero-card">
+                <h2>THE GARDEN PARTY</h2>
+                <p>Katherine Mansfield</p>
+                <p class="tagline">Complete Bilingual English Learning PWA</p>
+            </div>
+            <div class="grid-menu">
+                <button class="menu-card" data-target="reader-screen">📖 Read the Story</button>
+                <button class="menu-card" data-target="vocab-screen">🔤 Word-by-Word Meaning</button>
+                <button class="menu-card" data-target="characters-screen">👥 Characters</button>
+                <button class="menu-card" data-target="themes-screen">🎭 Themes</button>
+                <button class="menu-card" data-target="symbols-screen">💡 Symbols</button>
+                <button class="menu-card" data-target="saq-screen">📝 SAQ</button>
+                <button class="menu-card" data-target="broad-screen">📘 Broad Questions</button>
+                <button class="menu-card" data-target="revision-screen">🔄 Revision</button>
+                <button class="menu-card" data-target="bookmarks-screen">🔖 Bookmarks</button>
+                <button class="menu-card" data-target="progress-screen">📊 My Progress</button>
+            </div>
+        </section>
+
+        <!-- Reader Screen -->
+        <section id="reader-screen" class="screen">
+            <div class="toolbar">
+                <div class="page-nav">
+                    <button id="prev-page">← Prev</button>
+                    <span id="page-indicator">Page 51 / 66</span>
+                    <button id="next-page">Next →</button>
+                </div>
+                <div class="reader-controls">
+                    <select id="lang-toggle">
+                        <option value="en">English Only</option>
+                        <option value="bn">বাংলা অর্থ</option>
+                        <option value="both">Both</option>
+                    </select>
+                    <button id="font-decrease">A-</button>
+                    <button id="font-increase">A+</button>
+                    <button id="line-spacing">↕</button>
+                    <button id="bookmark-page-btn">🔖 Bookmark</button>
+                    <button id="tts-btn">▶ Read</button>
+                </div>
+            </div>
+            <div id="reader-content" class="reader-content">
+                <!-- Content will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Vocabulary Screen -->
+        <section id="vocab-screen" class="screen">
+            <div class="search-bar">
+                <input type="text" id="vocab-search" placeholder="Search a word...">
+            </div>
+            <div id="vocab-list" class="list-container">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Characters Screen -->
+        <section id="characters-screen" class="screen">
+            <h2>👥 Characters</h2>
+            <div id="characters-list" class="list-container">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Themes Screen -->
+        <section id="themes-screen" class="screen">
+            <h2>🎭 Themes</h2>
+            <div id="themes-list" class="list-container">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Symbols Screen -->
+        <section id="symbols-screen" class="screen">
+            <h2>💡 Symbols & Significance</h2>
+            <div id="symbols-list" class="list-container">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- SAQ Screen -->
+        <section id="saq-screen" class="screen">
+            <h2>📝 Short Answer Questions (SAQ)</h2>
+            <div id="saq-list" class="list-container">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Broad Questions Screen -->
+        <section id="broad-screen" class="screen">
+            <h2>📘 Broad / Descriptive Questions</h2>
+            <div id="broad-list" class="list-container">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Revision Screen -->
+        <section id="revision-screen" class="screen">
+            <h2>🔄 Last-Minute Revision</h2>
+            <div id="revision-content" class="card">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Bookmarks Screen -->
+        <section id="bookmarks-screen" class="screen">
+            <h2>🔖 Bookmarks</h2>
+            <div id="bookmarks-list" class="list-container">
+                <p class="empty-msg">No bookmarks yet. Tap the 🔖 icon while reading.</p>
+            </div>
+        </section>
+
+        <!-- Progress Screen -->
+        <section id="progress-screen" class="screen">
+            <h2>📊 My Progress</h2>
+            <div class="card progress-card">
+                <p>Reading Progress: <span id="prog-reading">0%</span></p>
+                <div class="progress-bar"><div id="prog-bar" style="width:0%"></div></div>
+                <p>Words Explored: <span id="prog-words">0</span></p>
+                <p>SAQs Studied: <span id="prog-saq">0</span></p>
+                <p>Broad Questions Studied: <span id="prog-broad">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- WORD POPUP MODAL -->
+    <div id="word-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <h3 id="modal-word">ideal</h3>
+            <p class="modal-bn" id="modal-bengali">আদর্শ / উপযুক্ত</p>
+            <div class="modal-details">
+                <p><strong>Pronunciation:</strong> <span id="modal-pron">আইডিয়াল</span></p>
+                <p><strong>Part of Speech:</strong> <span id="modal-pos">Adjective</span></p>
+                <p><strong>Simple Meaning:</strong> <span id="modal-simple">perfect or suitable</span></p>
+                <p class="context-meaning"><strong>Contextual:</strong> <span id="modal-context">perfect for the garden party</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION OVERLAY -->
+    <div id="nav-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <button class="close-overlay">&times;</button>
+            <h3>Menu</h3>
+            <button class="nav-link" data-target="home-screen">🏠 Home</button>
+            <button class="nav-link" data-target="reader-screen">📖 Read</button>
+            <button class="nav-link" data-target="vocab-screen">🔤 Vocabulary</button>
+            <button class="nav-link" data-target="characters-screen">👥 Characters</button>
+            <button class="nav-link" data-target="themes-screen">🎭 Themes</button>
+            <button class="nav-link" data-target="symbols-screen">💡 Symbols</button>
+            <button class="nav-link" data-target="saq-screen">📝 SAQ</button>
+            <button class="nav-link" data-target="broad-screen">📘 Broad Questions</button>
+            <button class="nav-link" data-target="revision-screen">🔄 Revision</button>
+            <button class="nav-link" data-target="bookmarks-screen">🔖 Bookmarks</button>
+            <button class="nav-link" data-target="progress-screen">📊 Progress</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
