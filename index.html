@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Garden Party - Bilingual Study App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2d5a27">
-    <!-- Google Fonts for Bengali & English -->
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Noto+Sans+Bengali:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
     <header id="app-header">
         <div class="header-content">
             <h1 id="app-title">The Garden Party</h1>
@@ -23,14 +21,13 @@
         <button id="menu-btn" aria-label="Menu">☰</button>
     </header>
 
-    <!-- MAIN CONTAINER -->
     <main id="app-container">
         <!-- Home Screen -->
         <section id="home-screen" class="screen active">
             <div class="hero-card">
                 <h2>THE GARDEN PARTY</h2>
                 <p>Katherine Mansfield</p>
-                <p class="tagline">Complete Bilingual English Learning PWA</p>
+                <p class="tagline">Complete Bilingual English Learning App</p>
             </div>
             <div class="grid-menu">
                 <button class="menu-card" data-target="reader-screen">📖 Read the Story</button>
@@ -58,18 +55,16 @@
                     <select id="lang-toggle">
                         <option value="en">English Only</option>
                         <option value="bn">বাংলা অর্থ</option>
-                        <option value="both">Both</option>
+                        <option value="both" selected>Both</option>
                     </select>
                     <button id="font-decrease">A-</button>
                     <button id="font-increase">A+</button>
                     <button id="line-spacing">↕</button>
-                    <button id="bookmark-page-btn">🔖 Bookmark</button>
+                    <button id="bookmark-page-btn">🔖</button>
                     <button id="tts-btn">▶ Read</button>
                 </div>
             </div>
-            <div id="reader-content" class="reader-content">
-                <!-- Content will be injected by JS -->
-            </div>
+            <div id="reader-content" class="reader-content"></div>
         </section>
 
         <!-- Vocabulary Screen -->
@@ -77,67 +72,23 @@
             <div class="search-bar">
                 <input type="text" id="vocab-search" placeholder="Search a word...">
             </div>
-            <div id="vocab-list" class="list-container">
-                <!-- Injected by JS -->
-            </div>
+            <div id="vocab-list" class="list-container"></div>
         </section>
 
         <!-- Characters Screen -->
-        <section id="characters-screen" class="screen">
-            <h2>👥 Characters</h2>
-            <div id="characters-list" class="list-container">
-                <!-- Injected by JS -->
-            </div>
-        </section>
-
+        <section id="characters-screen" class="screen"><h2>👥 Characters</h2><div id="characters-list" class="list-container"></div></section>
         <!-- Themes Screen -->
-        <section id="themes-screen" class="screen">
-            <h2>🎭 Themes</h2>
-            <div id="themes-list" class="list-container">
-                <!-- Injected by JS -->
-            </div>
-        </section>
-
+        <section id="themes-screen" class="screen"><h2>🎭 Themes</h2><div id="themes-list" class="list-container"></div></section>
         <!-- Symbols Screen -->
-        <section id="symbols-screen" class="screen">
-            <h2>💡 Symbols & Significance</h2>
-            <div id="symbols-list" class="list-container">
-                <!-- Injected by JS -->
-            </div>
-        </section>
-
+        <section id="symbols-screen" class="screen"><h2>💡 Symbols & Significance</h2><div id="symbols-list" class="list-container"></div></section>
         <!-- SAQ Screen -->
-        <section id="saq-screen" class="screen">
-            <h2>📝 Short Answer Questions (SAQ)</h2>
-            <div id="saq-list" class="list-container">
-                <!-- Injected by JS -->
-            </div>
-        </section>
-
+        <section id="saq-screen" class="screen"><h2>📝 Short Answer Questions</h2><div id="saq-list" class="list-container"></div></section>
         <!-- Broad Questions Screen -->
-        <section id="broad-screen" class="screen">
-            <h2>📘 Broad / Descriptive Questions</h2>
-            <div id="broad-list" class="list-container">
-                <!-- Injected by JS -->
-            </div>
-        </section>
-
+        <section id="broad-screen" class="screen"><h2>📘 Broad / Descriptive Questions</h2><div id="broad-list" class="list-container"></div></section>
         <!-- Revision Screen -->
-        <section id="revision-screen" class="screen">
-            <h2>🔄 Last-Minute Revision</h2>
-            <div id="revision-content" class="card">
-                <!-- Injected by JS -->
-            </div>
-        </section>
-
+        <section id="revision-screen" class="screen"><h2>🔄 Last-Minute Revision</h2><div id="revision-content" class="card"></div></section>
         <!-- Bookmarks Screen -->
-        <section id="bookmarks-screen" class="screen">
-            <h2>🔖 Bookmarks</h2>
-            <div id="bookmarks-list" class="list-container">
-                <p class="empty-msg">No bookmarks yet. Tap the 🔖 icon while reading.</p>
-            </div>
-        </section>
-
+        <section id="bookmarks-screen" class="screen"><h2>🔖 Bookmarks</h2><div id="bookmarks-list" class="list-container"><p class="empty-msg">No bookmarks yet. Tap the 🔖 icon while reading.</p></div></section>
         <!-- Progress Screen -->
         <section id="progress-screen" class="screen">
             <h2>📊 My Progress</h2>
@@ -187,4 +138,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+                    </html>
