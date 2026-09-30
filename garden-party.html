@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Garden Party – Bilingual Reader</title>
+<style>
+:root{--bg:#faf5e6;--card:#fffdf5;--tx:#2a2a22;--gr:#2f5d3a;--ln:#d8d0b4}
+body.dark{--bg:#1c211c;--card:#252b25;--tx:#e8e6d8;--gr:#8fc79a;--ln:#3a423a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,serif;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:5;background:var(--gr);display:flex;overflow-x:auto}
+nav button{flex:1;min-width:76px;padding:14px 8px;border:0;background:none;color:#fff;font-size:15px}
+nav button.on{background:rgba(0,0,0,.25)}
+main{max-width:680px;margin:auto;padding:14px}
+h1,h2{color:var(--gr);font-weight:normal}
+h1{text-align:center;margin:8px 0 0}.sub{text-align:center;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:12px;margin:10px 0}
+button.b{background:var(--gr);color:#fff;border:0;border-radius:8px;padding:10px 14px;margin:3px;font-size:15px}
+input,select{padding:10px;font-size:16px;border:1px solid var(--ln);border-radius:8px;background:var(--card);color:var(--tx);max-width:100%}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px}
+#text{font-size:19px;line-height:1.7}#text p{margin:0 0 .9em;white-space:pre-line}
+.w{cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;border-radius:3px}.w:active,.w.sel{background:#f3d97a;color:#000}
+.bn{font-family:'Noto Sans Bengali',sans-serif;color:var(--gr);border-left:3px solid var(--gr);padding-left:8px;margin:0 0 1em}
+.fn{font-size:14px;border-top:1px solid var(--ln);padding-top:6px}
+.read #text{max-width:34em;margin:auto}
+#pop{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:3px solid var(--gr);padding:14px;display:none;z-index:9;box-shadow:0 -4px 14px #0003;max-height:55vh;overflow:auto}
+#pop h3{margin:0;color:var(--gr);font-size:22px}
+.tag{display:inline-block;font-size:12px;background:var(--gr);color:#fff;border-radius:6px;padding:2px 6px;margin-right:4px}
+details{margin:6px 0}summary{font-weight:bold;padding:6px 0}
+@media print{nav,#pop,.bar{display:none}}
+</style></head><body>
+<nav id="nav"></nav>
+<main id="main"></main>
+<div id="pop"></div>
+<script>
+const lesson={title:"The Garden Party",author:"Katherine Mansfield",
+pages:[
+{n:50,head:"The Garden Party — KATHERINE MANSFIELD",paras:[
+"About the Author :",
+"Katherine Mansfield, (1888-1923) originally named Kathleen Mansfield Murry was a celebrated writer across the world and an important figure of the Modernist Movement. Mansfield wrote short stories and poetry and used a variation of her own name, Katherine Mansfield. Her literary oeuvre explored the idea of anxiety, sexualism and existentialism. She also dwelt on the fragility and vulnerability of relationships, the complexities and insensitivities of the rising middle classes, the social consequences of war, and overwhelmingly the attempt to extract whatever beauty and vitality one can from mundane and increasingly difficult experience. At the age of 19 she shifted from New Zealand to England. She became friends with noted writers of the Bloomsbury Group - D.H. Lawrence and Virginia Woolf. Her brother, Leslie's death during training for service in World War I left an indelible mark on her psyche which found its way in her writings as well. Mansfield's numerous short stories immensely influenced the genre of modernist literature in the 20th century.",
+"About the Text :",
+"The Garden Party is a short story, first published in three parts in the Saturday Westminster Gazette on 4 and 11 February 1922, and the Weekly Westminster Gazette on 18 February 1922. It later appeared in The Garden Party and Other Stories. Its luxurious setting is based on Mansfield's childhood home in New Zealand. Mansfield explores the themes of a) class consciousness, b) illusion versus reality, c) sensitivity and insensitivity, d) death and life, and e) loss of innocence. The author emphasises the nuances of empathy and understanding while deliberating over the insensitivities surrounding the rising middle classes and the social consequences of war. The story centres on Laura Sheridan's response to the accidental death of a neighbourhood workman. The story was widely appreciated for Mansfield's stream of consciousness and symbolic narrative style."],
+bn:"ক্যাথরিন ম্যান্সফিল্ড (১৮৮৮–১৯২৩) নিউজিল্যান্ডে জন্মেছিলেন এবং ১৯ বছর বয়সে ইংল্যান্ডে যান। তিনি আধুনিকতাবাদী আন্দোলনের একজন গুরুত্বপূর্ণ লেখক। গল্পটি লরা শেরিডানের প্রতিক্রিয়ার কাহিনি, যখন এক শ্রমিকের আকস্মিক মৃত্যু ঘটে। মূল বিষয়: শ্রেণিচেতনা, বাস্তব বনাম মায়া, সংবেদনশীলতা ও অসংবেদনশীলতা, জীবন ও মৃত্যু, নিষ্পাপতা হারানো।",fn:[]},
+{n:51,head:"Text",paras:[
+"And after all the weather was ideal. They could not have had a more perfect day for a garden-party if they had ordered it. Windless, warm, the sky without a cloud. Only the blue was veiled\u00B9 with a haze of light gold, as it is sometimes in early summer. The gardener had been up since dawn, mowing the lawns and sweeping them, until the grass and the dark flat rosettes where the daisy plants had been seemed to shine. As for the roses, you could not help feeling they understood that roses are the only flowers that impress people at garden-parties; the only flowers that everybody is certain of knowing. Hundreds, yes, literally hundreds, had come out in a single night; the green bushes bowed down as though they had been visited by archangels.",
+"Breakfast was not yet over before the men came to put up the marquee\u00B2.",
+"\"Where do you want the marquee put, mother?\"",
+"\"My dear child, it's no use asking me. I'm determined to leave everything to you children this year. Forget I am your mother. Treat me as an honoured guest.\"",
+"But Meg could not possibly go and supervise the men. She had washed her hair before breakfast, and she sat drinking her coffee in a green turban, with a dark wet curl stamped on each cheek. Jose, the butterfly, always came down in a silk petticoat and a kimono jacket.",
+"\"You'll have to go, Laura; you're the artistic one.\"",
+"Away Laura flew, still holding her piece of bread-and-butter. It's so delicious to have an excuse for eating out of doors, and besides, she loved having to arrange things; she always felt she could do it so much better than anybody else.",
+"Four men in their shirt-sleeves stood grouped together on the garden path. They carried staves covered with rolls of canvas, and they had big tool-bags slung on their backs. They looked impressive. Laura wished now that she had not got the bread-and-butter, but there was nowhere to put it, and she couldn't possibly throw it away. She blushed and tried to look severe and even a little bit short-sighted as she came up to them.",
+"\"Good morning,\" she said, copying her mother's voice. But that sounded so fearfully affected that she was ashamed, and stammered\u00B3 like a little girl, \"Oh-er-have you come-is it about the marquee?\""],
+bn:"সেদিন আবহাওয়া ছিল নিখুঁত — বাতাসহীন, উষ্ণ, মেঘহীন আকাশ। মালি ভোর থেকে ঘাস কেটেছে; এক রাতেই শত শত গোলাপ ফুটেছে। সকালের খাবার শেষ হওয়ার আগেই লোকজন তাঁবু (মার্কি) খাটাতে এল। মা সব দায়িত্ব ছেলেমেয়েদের দিয়েছেন। মেগ চুল ধুয়েছে, জোসে সাজগোজে ব্যস্ত, তাই শিল্পীমনের লরাকে পাঠানো হল। শ্রমিকদের সামনে লরা লজ্জায় তোতলাতে লাগল।",
+fn:["Veiled : covered, masked, disguised, obscure.","Marquee : a large tent used for social or commercial functions.","Stammered : say something with difficulty."]},
+{n:52,head:"The Garden Party",paras:[
+"\"That's right, miss,\" said the tallest of the men, a lanky\u2074, freckled fellow, and he shifted his tool-bag, knocked back his straw hat and smiled down at her. \"That's about it.\"",
+"His smile was so easy, so friendly that Laura recovered. What nice eyes he had, small, but such a dark blue! And now she looked at the others, they were smiling too. \"Cheer up, we won't bite,\" their smile seemed to say. How very nice workmen were! And what a beautiful morning! She mustn't mention the morning; she must be business-like. The marquee.",
+"\"Well, what about the lily-lawn? Would that do?\"",
+"And she pointed to the lily-lawn with the hand that didn't hold the bread-and-butter. They turned, they stared in the direction. A little fat chap thrust out his under-lip, and the tall fellow frowned.",
+"\"I don't fancy it,\" said he. \"Not conspicuous\u2075 enough. You see, with a thing like a marquee,\" and he turned to Laura in his easy way, \"you want to put it somewhere where it'll give you a bang slap in the eye, if you follow me.\"",
+"Laura's upbringing made her wonder for a moment whether it was quite respectful of a workman to talk to her of bangs slap in the eye. But she did quite follow him.",
+"\"A corner of the tennis-court,\" she suggested. \"But the band's going to be in one corner.\"",
+"\"H'm, going to have a band, are you?\" said another of the workmen. He was pale. He had a haggard\u2076 look as his dark eyes scanned the tennis-court. What was he thinking?",
+"\"Only a very small band,\" said Laura gently. Perhaps he wouldn't mind so much if the band was quite small. But the tall fellow interrupted.",
+"\"Look here, miss, that's the place. Against those trees. Over there. That'll do fine.\"",
+"Against the karakas\u2077 Then the karaka-trees would be hidden. And they were so lovely, with their broad, gleaming leaves, and their clusters of yellow fruit. They were like trees you imagined growing on a desert island, proud, solitary, lifting"],
+bn:"লম্বা, রোগা, দাগওয়ালা মুখের শ্রমিকটি এত বন্ধুত্বপূর্ণভাবে হাসল যে লরা স্বাভাবিক হল। লরা ভাবল শ্রমিকরা কত ভালো! লিলি-লনে তাঁবু খাটানোর প্রস্তাব শ্রমিকটি নাকচ করল — জায়গাটা যথেষ্ট চোখে পড়ার মতো নয়। সে কারাকা গাছের সামনে তাঁবু খাটাতে বলল, যদিও গাছগুলো লরার খুব প্রিয় ছিল।",
+fn:["Lanky : ungracefully thin and tall.","Conspicuous : clearly visible.","Haggard : looking exhausted and unwell, fatigue.","Karakas : a New Zealand tree with orange berries."]},
+{n:53,head:"Text",paras:[
+"their leaves and fruits to the sun in a kind of silent splendour. Must they be hidden by a marquee?",
+"They must. Already the men had shouldered their staves and were making for the place. Only the tall fellow was left. He bent down, pinched a sprig of lavender, put his thumb and forefinger to his nose and snuffed up the smell. When Laura saw that gesture she forgot all about the karakas in her wonder at him caring for things like that-caring for the smell of lavender. How many men that she knew would have done such a thing? Oh, how extraordinarily nice workmen were, she thought. Why couldn't she have workmen for her friends rather than the silly boys she danced with and who came to Sunday night supper? She would get on much better with men like these.",
+"It's all the fault, she decided, as the tall fellow drew something on the back of an envelope, something that was to be looped up or left to hang, of these absurd\u2078 class distinctions. Well, for her part, she didn't feel them. Not a bit, not an atom.... And now there came the chock-chock of wooden hammers. Someone whistled, someone sang out, \"Are you right there, matey?\" \"Matey!\" The friendliness of it, the-the-just to prove how happy she was, just to show the tall fellow how at home she felt, and how she despised stupid conventions, Laura took a big bite of her bread-and-butter as she stared at the little drawing. She felt just like a work-girl.",
+"\"Laura, Laura, where are you? Telephone, Laura!\" a voice cried from the house.",
+"\"Coming!\" Away she skimmed, over the lawn, up the path, up the steps, across the veranda, and into the porch. In the hall her father and Laurie were brushing their hats ready to go to the office.",
+"\"I say, Laura,\" said Laurie very fast, \"you might just give a squiz at my coat before this afternoon. See if it wants pressing.\"",
+"\"I will,\" said she. Suddenly she couldn't stop herself. She ran at Laurie and gave him a small, quick squeeze. \"Oh, I do love parties, don't you?\" gasped Laura.",
+"\"Ra-ther,\" said Laurie's warm, boyish voice, and he squeezed his sister too, and gave her a gentle push. \"Dash off to the telephone, old girl.\"",
+"The telephone. \"Yes, yes; oh yes. Kitty? Good morning, dear. Come to lunch? Do, dear. Delighted of course. It will only be a very scratch meal-just the sandwich crusts and broken meringue-shells and what's left over. Yes, isn't it a perfect"],
+bn:"লরা শ্রমিকদের এতই ভালো ভাবল যে তাদের সঙ্গে বন্ধুত্ব করতে চাইল। লম্বা লোকটি ল্যাভেন্ডারের গন্ধ নিল দেখে সে মুগ্ধ হল। লরা ভাবল, শ্রেণিভেদ অর্থহীন, সে নিজে তা মানে না। ডাক পেয়ে সে বাড়ি ফিরল; ভাই লরি তার কোট দেখতে বলল, লরা তাকে জড়িয়ে ধরে বলল সে পার্টি ভালোবাসে। এরপর সে ফোনে কিটিকে দুপুরের খাবারে ডাকল।",
+fn:["Absurd : wildly unreasonable, illogical, inappropriate."]},
+{n:54,head:"The Garden Party",paras:[
+"morning? Your white? Oh, I certainly should. One moment-hold the line. Mother's calling.\" And Laura sat back. \"What, mother? Can't hear.\"",
+"Mrs. Sheridan's voice floated down the stairs. \"Tell her to wear that sweet hat she had on last Sunday.\"",
+"\"Mother says you're to wear that sweet hat you had on last Sunday. Good. One o'clock. Bye-bye.\"",
+"Laura put back the receiver, flung her arms over her head, took a deep breath, stretched and let them fall. \"Huh,\" she sighed, and the moment after the sigh she sat up quickly. She was still, listening. All the doors in the house seemed to be open. The house was alive with soft, quick steps and running voices. The green baize door that led to the kitchen regions swung open and shut with a muffled thud. And now there came a long, chuckling absurd sound. It was the heavy piano being moved on its stiff castors. But the air! If you stopped to notice, was the air always like this? Little faint winds were playing chase, in at the tops of the windows, out at the doors. And there were two tiny spots of sun, one on the inkpot, one on a silver photograph frame, playing too. Darling little spots. Especially the one on the inkpot lid. It was quite warm. A warm little silver star. She could have kissed it.",
+"The front door bell pealed, and there sounded the rustle of Sadie's print skirt on the stairs. A man's voice murmured; Sadie answered, careless, \"I'm sure I don't know. Wait. I'll ask Mrs Sheridan.\"",
+"\"What is it, Sadie?\" Laura came into the hall.",
+"\"It's the florist, Miss Laura.\"",
+"It was, indeed. There, just inside the door, stood a wide, shallow tray full of pots of pink lilies. No other kind. Nothing but lilies-canna lilies, big pink flowers, wide open, radiant, almost frighteningly alive on bright crimson\u2079 stems.",
+"\"O-oh, Sadie!\" said Laura, and the sound was like a little moan. She crouched down as if to warm herself at that blaze of lilies; she felt they were in her fingers, on her lips, growing in her breast.",
+"\"It's some mistake,\" she said faintly. \"Nobody ever ordered so many. Sadie, go and find mother.\"",
+"But at that moment Mrs. Sheridan joined them."],
+bn:"ফোনে মা বললেন কিটি যেন গত রবিবারের সুন্দর টুপিটা পরে আসে। ফোন রেখে লরা বাড়ির প্রাণচাঞ্চল্য অনুভব করল — পিয়ানো সরানো হচ্ছে, হালকা বাতাস, জানালায় সূর্যের ছোট আলোর ফোঁটা। ফুলওয়ালা এসে গোলাপি ক্যানা লিলির অনেক টব দিয়ে গেল। লরা মুগ্ধ ও বিস্মিত হয়ে ভাবল এটা ভুল হয়েছে; তখনই মা এলেন।",
+fn:["Crimson : a rich deep red colour."]},
+{n:55,head:"A Realm of English (B) Selection",paras:[
+"\"It's quite right,\" she said calmly. \"Yes, I ordered them. Aren't they lovely?\" She pressed Laura's arm. \"I was passing the shop yesterday, and I saw them in the window. And I suddenly thought for once in my life I shall have enough canna lilies. The garden-party will be a good excuse.\"",
+"\"But I thought you said you didn't mean to interfere,\" said Laura. Sadie had gone. The florist's man was still outside at his van. She put her arm round her mother's neck and gently, very gently, she bit her mother's ear.",
+"\"My darling child, you wouldn't like a logical mother, would you? Don't do that. Here's the man.\"",
+"He carried more lilies still, another whole tray.",
+"\"Bank them up, just inside the door, on both sides of the porch, please,\" said Mrs. Sheridan. \"Don't you agree, Laura?\"",
+"\"Oh, I do, mother.\"",
+"In the drawing-room Meg, Jose and good little Hans had at last succeeded in moving the piano.",
+"\"Now, if we put this chesterfield against the wall and move everything out of the room except the chairs, don't you think?\"",
+"\"Quite.\"",
+"\"Hans, move these tables into the smoking-room, and bring a sweeper to take these marks off the carpet and-one moment, Hans.\" Jose loved giving orders to the servants, and they loved obeying her. She always made them feel they were taking part in some drama. \"Tell mother and Miss Laura to come here at once.\"",
+"\"Very good, Miss Jose.\"",
+"She turned to Meg. \"I want to hear what the piano sounds like, just in case I'm asked to sing this afternoon. Let's try over 'This life is Weary.'\"",
+"Pom! Ta-ta-ta Tee-ta! The piano burst out so passionately that Jose's face changed. She clasped her hands. She looked mournfully\u00B9\u00B9 and enigmatically\u00B9\u00B2 at her mother and Laura as they came in."],
+bn:"মিসেস শেরিডান শান্তভাবে জানালেন লিলিগুলো তিনিই অর্ডার করেছেন — জীবনে একবার পর্যাপ্ত ক্যানা লিলি চেয়েছিলেন, গার্ডেন-পার্টি ভালো অজুহাত। লরা আদর করে মায়ের কান কামড়ে দিল। মেগ, জোসে ও হ্যান্স পিয়ানো সরাল। জোসে চাকরদের হুকুম দিতে ভালোবাসত। সে পিয়ানো বাজিয়ে দুঃখের গান গাইতে শুরু করল।",
+fn:["Weary : feeling or showing extreme tiredness.","Mournfully : feeling/expressing sadness, regret, or grief.","Enigma : a person or thing that is difficult to understand."]},
+{n:56,head:"The Garden Party",paras:[
+"This Life is Wee-ary,\nA Tear-a Sigh.\nA Love that Chan-ges,\nThis Life is Wee-ary,\nA Tear-a Sigh.\nA Love that Chan-ges,\nAnd then. . . Good-bye!",
+"But at the word \"Good-bye,\" and although the piano sounded more desperate than ever, her face broke into a brilliant, dreadfully unsympathetic smile.",
+"\"Aren't I in good voice, mummy?\" she beamed.",
+"This Life is Wee-ary,\nHope comes to Die.\nA Dream-a Wa-kening.",
+"But now Sadie interrupted them. \"What is it, Sadie?\"",
+"\"If you please, ma'am, cook says have you got the flags for the sandwiches?\"",
+"\"The flags for the sandwiches, Sadie?\" echoed Mrs. Sheridan dreamily. And the children knew by her face that she hadn't got them. \"Let me see.\" And she said to Sadie firmly, \"Tell cook I'll let her have them in ten minutes.\"",
+"Sadie went.",
+"\"Now, Laura,\" said her mother quickly, \"come with me into the smoking-room. I've got the names somewhere on the back of an envelope. You'll have to write them out for me. Meg, go upstairs this minute and take that wet thing off your head. Jose, run and finish dressing this instant. Do you hear me, children, or shall I have to tell your father when he comes home to-night? And-and, Jose, pacify\u00B9\u00B3 cook if you do go into the kitchen, will you? I'm terrified of her this morning.\"",
+"The envelope was found at last behind the dining-room clock, though how it had got there Mrs. Sheridan could not imagine.",
+"\"One of you children must have stolen it out of my bag, because I remember vividly-cream-cheese and lemon-curd. Have you done that?\""],
+bn:"জোসে গানের 'Good-bye' শব্দে নির্মম হাসি হাসল এবং নিজের গলার প্রশংসা চাইল। সেই সময় সাদি এসে স্যান্ডউইচের পতাকার কথা জিজ্ঞেস করল; মা ভুলে গিয়েছিলেন। তিনি লরাকে নামের তালিকা লিখতে ডাকলেন, মেগ ও জোসেকে তাড়া দিলেন এবং রাঁধুনিকে শান্ত করতে বললেন।",
+fn:["Pacify : to quell the anger, agitation or excitement."]},
+{n:57,head:"A Realm of English (B) Selection",paras:[
+"\"Yes.\"",
+"\"Egg and-\" Mrs. Sheridan held the envelope away from her. \"It looks like mice. It can't be mice, can it?\"",
+"\"Olive, pet,\" said Laura, looking over her shoulder.",
+"\"Yes, of course, olive. What a horrible combination it sounds. Egg and olive.\"",
+"They were finished at last, and Laura took them off to the kitchen. She found Jose there pacifying the cook, who did not look at all terrifying.",
+"\"I have never seen such exquisite sandwiches,\" said Jose's rapturous\u00B9\u2074 voice. \"How many kinds did you say there were, cook? Fifteen?\"",
+"\"Fifteen, Miss Jose.\"",
+"\"Well, cook, I congratulate you.\"",
+"Cook swept up crusts with the long sandwich knife, and smiled broadly.",
+"\"Godber's has come,\" announced Sadie, issuing out of the pantry. She had seen the man pass the window.",
+"That meant the cream puffs had come. Godber's were famous for their cream puffs. Nobody ever thought of making them at home.",
+"\"Bring them in and put them on the table, my girl,\" ordered cook.",
+"Sadie brought them in and went back to the door. Of course Laura and Jose were far too grown-up to really care about such things. All the same, they couldn't help agreeing that the puffs looked very attractive. Very. Cook began arranging them, shaking off the extra icing sugar.",
+"\"Don't they carry one back to all one's parties?\" said Laura.",
+"\"I suppose they do,\" said practical Jose, who never liked to be carried back. \"They look beautifully light and feathery, I must say.\"",
+"\"Have one each, my dears,\" said cook in her comfortable voice. \"Yer ma won't know.\"",
+"Oh, impossible. Fancy cream puffs so soon after breakfast. The very idea made one shudder\u00B9\u2075. All the same, two minutes later Jose and Laura were licking their fingers with that absorbed inward look that only comes from whipped cream."],
+bn:"স্যান্ডউইচের তালিকা লিখতে গিয়ে ডিম আর অলিভের নাম ঠিক হল। রান্নাঘরে জোসে রাঁধুনির প্রশংসা করে তাকে শান্ত করল। গডবারের দোকান থেকে ক্রিম পাফ এল; রাঁধুনির কথায় লরা ও জোসে লুকিয়ে একটা করে খেল।",
+fn:["Rapturous : expressing great pleasure or enthusiasm.","Shudder : tremble convulsively, typically as result of fear or revulsion."]},
+{n:58,head:"The Garden Party",paras:[
+"\"Let's go into the garden, out by the back way,\" suggested Laura. \"I want to see how the men are getting on with the marquee. They're such awfully nice men.\"",
+"But the back door was blocked by cook, Sadie, Godber's man and Hans.",
+"Something had happened.",
+"\"Tuk-tuk-tuk,\" clucked cook like an agitated hen. Sadie had her hand clapped to her cheek as though she had toothache. Hans's face was screwed up in the effort to understand. Only Godber's man seemed to be enjoying himself; it was his story.",
+"\"What's the matter? What's happened?\"",
+"\"There's been a horrible accident,\" said Cook. \"A man killed.\"",
+"\"A man killed! Where? How? When?\"",
+"But Godber's man wasn't going to have his story snatched from under his very nose.",
+"\"Know those little cottages just below here, miss?\" Know them? Of course, she knew them. \"Well, there's a young chap living there, name of Scott, a carter. His horse shied at a traction-engine, corner of Hawke Street this morning, and he was thrown out on the back of his head. Killed.\"",
+"\"Dead!\" Laura stared at Godber's man.",
+"\"Dead when they picked him up,\" said Godber's man with relish. \"They were taking the body home as I come up here.\" And he said to the cook, \"He's left a wife and five little ones.\"",
+"\"Jose, come here.\" Laura caught hold of her sister's sleeve and dragged her through the kitchen to the other side of the green baize door. There she paused and leaned against it. \"Jose!\" she said, horrified, \"however are we going to stop everything?\"",
+"\"Stop everything, Laura!\" cried Jose in astonishment. \"What do you mean?\"",
+"\"Stop the garden-party, of course.\" Why did Jose pretend?",
+"But Jose was still more amazed. \"Stop the garden-party? My dear Laura, don't be so absurd. Of course we can't do anything of the kind. Nobody expects us to. Don't be so extravagant\u00B9\u2076.\"",
+"\"But we can't possibly have a garden-party with a man dead just outside the front gate.\""],
+bn:"পিছনের দরজায় রাঁধুনি, সাদি, গডবারের লোক ও হ্যান্স ভিড় করে ছিল। গডবারের লোক জানাল, কাছের কুটিরের গাড়োয়ান স্কট ঘোড়া ভয় পেয়ে ছিটকে পড়ায় মারা গেছে; সে স্ত্রী ও পাঁচ সন্তান রেখে গেছে। লরা জোসেকে বলল পার্টি বন্ধ করতে হবে। জোসে অবাক হয়ে তাকে 'অযৌক্তিক' ও 'বাড়াবাড়ি' বলল।",
+fn:["Extravagant : exceeding what is reasonable or appropriate, excessive, elaborate."]},
+{n:59,head:"A Realm of English (B) Selection",paras:[
+"That really was extravagant, for the little cottages were in a lane to themselves at the very bottom of a steep rise that led up to the house. A broad road ran between. True, they were far too near. They were the greatest possible eyesore, and they had no right to be in that neighbourhood at all. They were little mean dwellings painted a chocolate brown. In the garden patches there was nothing but cabbage stalks, sick hens and tomato cans. The very smoke coming out of their chimneys was poverty-stricken. Little rags and shreds of smoke, so unlike the great silvery plumes that uncurled from the Sheridans' chimneys. Washerwomen lived in the lane and sweeps and a cobbler, and a man whose house-front was studded all over with minute bird-cages. Children swarmed. When the Sheridans were little they were forbidden to set foot there because of the revolting language and of what they might catch. But since they were grown up, Laura and Laurie on their prowls sometimes walked through. It was disgusting and sordid. They came out with a shudder. But still one must go everywhere; one must see everything. So through they went.",
+"\"And just think of what the band would sound like to that poor woman,\" said Laura.",
+"\"Oh, Laura!\" Jose began to be seriously annoyed. \"If you're going to stop a band playing every time someone has an accident, you'll lead a very strenuous life. I'm every bit as sorry about it as you. I feel just as sympathetic.\" Her eyes hardened. She looked at her sister just as she used to when they were little and fighting together. \"You won't bring a drunken workman back to life by being sentimental,\" she said softly.",
+"\"Drunk! Who said he was drunk?\" Laura turned furiously on Jose. She said, just as they had used to say on those occasions, \"I'm going straight up to tell mother.\"",
+"\"Do, dear,\" cooed Jose.",
+"\"Mother, can I come into your room?\" Laura turned the big glass door-knob.",
+"\"Of course, child. Why, what's the matter? What's given you such a colour?\" And Mrs. Sheridan turned round from her dressing-table. She was trying on a new hat.",
+"\"Mother, a man's been killed,\" began Laura.",
+"\"Not in the garden?\" interrupted her mother.",
+"\"No, no!\""],
+bn:"কুটিরগুলো পাহাড়ের নিচে আলাদা গলিতে, শেরিডানদের চোখে সেগুলো 'চোখের কাঁটা' — নোংরা, দরিদ্র ও ঘিঞ্জি। জোসে বিরক্ত হয়ে বলল, 'কাঁদুনে হয়ে মাতাল শ্রমিককে বাঁচানো যাবে না।' লরা রেগে গিয়ে মায়ের কাছে নালিশ করতে গেল। মা তখন নতুন টুপি পরে দেখছিলেন।",
+fn:[]},
+{n:60,head:"The Garden Party",paras:[
+"\"Oh, what a fright you gave me!\" Mrs. Sheridan sighed with relief, and took off the big hat and held it on her knees.",
+"\"But listen, mother,\" said Laura. Breathless, half-choking, she told the dreadful story. \"Of course, we can't have our party, can we?\" she pleaded. \"The band and everybody arriving. They'd hear us, mother; they're nearly neighbours!\"",
+"To Laura's astonishment her mother behaved just like Jose; it was harder to bear because she seemed amused. She refused to take Laura seriously.",
+"\"But, my dear child, use your common sense. It's only by accident we've heard of it. If someone had died there normally-and I can't understand how they keep alive in those poky little holes-we should still be having our party, shouldn't we?\"",
+"Laura had to say \"yes\" to that, but she felt it was all wrong. She sat down on her mother's sofa and pinched the cushion frill.",
+"\"Mother, isn't it terribly heartless of us?\" she asked.",
+"\"Darling!\" Mrs. Sheridan got up and came over to her, carrying the hat. Before Laura could stop her she had popped it on. \"My child!\" said her mother, \"the hat is yours. It's made for you. It's much too young for me. I have never seen you look such a picture. Look at yourself!\" And she held up her hand-mirror.",
+"\"But, mother,\" Laura began again. She couldn't look at herself; she turned aside.",
+"This time Mrs. Sheridan lost patience just as Jose had done.",
+"\"You are being very absurd, Laura,\" she said coldly. \"People like that don't expect sacrifices from us. And it's not very sympathetic to spoil everybody's enjoyment as you're doing now.\"",
+"\"I don't understand,\" said Laura, and she walked quickly out of the room into her own bedroom. There, quite by chance, the first thing she saw was this charming girl in the mirror, in her black hat trimmed with gold daisies, and a long black velvet ribbon. Never had she imagined she could look like that. Is mother right? she thought. And now she hoped her mother was right. Am I being extravagant? Perhaps it was extravagant. Just for a moment she had another glimpse of that poor woman and those little children, and the body being carried into the house. But it all seemed blurred, unreal, like a picture in the newspaper. I'll remember it again after the party's over, she decided. And somehow that seemed quite the best plan...."],
+bn:"মা ভয় পেয়েছিলেন মৃত্যু বাগানে হয়েছে কিনা; শুনে স্বস্তি পেলেন। তিনি লরাকে গুরুত্ব দিলেন না, বললেন সাধারণ জ্ঞান খাটাও। তিনি লরার মাথায় নতুন টুপি পরিয়ে দিলেন। আয়নায় নিজেকে সুন্দর দেখে লরা দোটানায় পড়ল এবং ঠিক করল পার্টির পরে ঘটনাটা মনে করবে।",
+fn:[]},
+{n:61,head:"A Realm of English (B) Selection",paras:[
+"Lunch was over by half-past one. By half-past two they were all ready for the fray. The green-coated band had arrived and was established in a corner of the tennis-court.",
+"\"My dear!\" trilled Kitty Maitland, \"aren't they too like frogs for words? You ought to have arranged them round the pond with the conductor in the middle on a leaf.\"",
+"Laurie arrived and hailed them on his way to dress. At the sight of him Laura remembered the accident again. She wanted to tell him. If Laurie agreed with the others, then it was bound to be all right. And she followed him into the hall.",
+"\"Laurie!\"",
+"\"Hallo!\" He was half-way upstairs, but when he turned round and saw Laura he suddenly puffed out his cheeks and goggled his eyes at her. \"My word, Laura! You do look stunning,\" said Laurie. \"What an absolutely topping hat!\"",
+"Laura said faintly \"Is it?\" and smiled up at Laurie, and didn't tell him after all.",
+"Soon after that people began coming in streams. The band struck up; the hired waiters ran from the house to the marquee. Wherever you looked there were couples strolling, bending to the flowers, greeting, moving on over the lawn. They were like bright birds that had alighted in the Sheridans' garden for this one afternoon, on their way to-where? Ah, what happiness it is to be with people who all are happy, to press hands, press cheeks, smile into eyes.",
+"\"Darling Laura, how well you look!\"",
+"\"What a becoming hat, child!\"",
+"\"Laura, you look quite Spanish. I've never seen you look so striking.\"",
+"And Laura, glowing, answered softly, \"Have you had tea? Won't you have an ice? The passion-fruit ices really are rather special.\" She ran to her father and begged him. \"Daddy darling, can't the band have something to drink?\"",
+"And the perfect afternoon slowly ripened, slowly faded, slowly its petals closed.",
+"\"Never a more delightful garden-party....\" \"The greatest success....\" \"Quite the most....\"",
+"Laura helped her mother with the good-byes. They stood side by side in the porch till it was all over."],
+bn:"দুপুরের খাবারের পর সবুজ কোটপরা বাদ্যদল এল। কিটি ম্যাটল্যান্ড তাদের ব্যাঙের সঙ্গে তুলনা করল। লরি সিঁড়িতে লরার টুপির প্রশংসা করল; লরা দুর্ঘটনার কথা বলতে গিয়েও বলল না। অতিথিরা ঝাঁকে ঝাঁকে এল, সবাই লরার প্রশংসা করল, পার্টি দারুণ সফল হল।",fn:[]},
+{n:62,head:"The Garden Party",paras:[
+"\"All over, all over, thank heaven,\" said Mrs. Sheridan. \"Round up the others, Laura. Let's go and have some fresh coffee. I'm exhausted. Yes, it's been very successful. But oh, these parties, these parties! Why will you children insist on giving parties!\" And they all of them sat down in the deserted marquee.",
+"\"Have a sandwich, daddy dear. I wrote the flag.\"",
+"\"Thanks.\" Mr. Sheridan took a bite and the sandwich was gone. He took another. \"I suppose you didn't hear of a beastly accident that happened to-day?\" he said.",
+"\"My dear,\" said Mrs. Sheridan, holding up her hand, \"we did. It nearly ruined the party. Laura insisted we should put it off.\"",
+"\"Oh, mother!\" Laura didn't want to be teased about it.",
+"\"It was a horrible affair all the same,\" said Mr. Sheridan. \"The chap was married too. Lived just below in the lane, and leaves a wife and half a dozen kiddies, so they say.\"",
+"An awkward little silence fell. Mrs. Sheridan fidgeted with her cup. Really, it was very tactless of father....",
+"Suddenly she looked up. There on the table were all those sandwiches, cakes, puffs, all uneaten, all going to be wasted. She had one of her brilliant ideas.",
+"\"I know,\" she said. \"Let's make up a basket. Let's send that poor creature some of this perfectly good food. At any rate, it will be the greatest treat for the children. Don't you agree? And she's sure to have neighbours calling in and so on. What a point to have it all ready prepared. Laura!\" She jumped up. \"Get me the big basket out of the stairs cupboard.\"",
+"\"But, mother, do you really think it's a good idea?\" said Laura.",
+"Again, how curious, she seemed to be different from them all. To take scraps from their party. Would the poor woman really like that?",
+"\"Of course! What's the matter with you to-day? An hour or two ago you were insisting on us being sympathetic, and now-\"",
+"Oh well! Laura ran for the basket. It was filled, it was heaped by her mother.",
+"\"Take it yourself, darling,\" said she. \"Run down just as you are. No, wait, take the arum lilies too. People of that class are so impressed by arum lilies.\"",
+"\"The stems will ruin her lace frock,\" said practical Jose."],
+bn:"পার্টির পর ফাঁকা তাঁবুতে বসে মিস্টার শেরিডান দুর্ঘটনার কথা তুললেন। মা বললেন এতে পার্টি প্রায় নষ্ট হচ্ছিল। উদ্বৃত্ত খাবার দেখে তাঁর মাথায় এল — স্কটের পরিবারকে ঝুড়ি ভরে খাবার পাঠাবেন। লরার ভালো লাগল না, তবু সে ঝুড়ি আনল। মা আরুম লিলিও দিতে চাইলেন, কিন্তু জোসে আপত্তি করল।",fn:[]},
+{n:63,head:"A Realm of English (B) Selection",paras:[
+"So they would. Just in time. \"Only the basket, then. And, Laura!\"-her mother followed her out of the marquee-\"don't on any account-\"",
+"\"What mother?\"",
+"No, better not put such ideas into the child's head! \"Nothing! Run along.\"",
+"It was just growing dusky as Laura shut their garden gates. A big dog ran by like a shadow. The road gleamed white, and down below in the hollow the little cottages were in deep shade. How quiet it seemed after the afternoon. Here she was going down the hill to somewhere where a man lay dead, and she couldn't realize it. Why couldn't she? She stopped a minute. And it seemed to her that kisses, voices, tinkling spoons, laughter, the smell of crushed grass were somehow inside her. She had no room for anything else. How strange! She looked up at the pale sky, and all she thought was, \"Yes, it was the most successful party.\"",
+"Now the broad road was crossed. The lane began, smoky and dark. Women in shawls and men's tweed caps hurried by. Men hung over the palings; the children played in the doorways. A low hum came from the mean little cottages. In some of them there was a flicker of light, and a shadow, crab-like, moved across the window. Laura bent her head and hurried on. She wished now she had put on a coat. How her frock shone! And the big hat with the velvet streamer-if only it was another hat! Were the people looking at her? They must be. It was a mistake to have come; she knew all along it was a mistake. Should she go back even now?",
+"No, too late. This was the house. It must be. A dark knot of people stood outside. Beside the gate an old, old woman with a crutch sat in a chair, watching. She had her feet on a newspaper. The voices stopped as Laura drew near. The group parted. It was as though she was expected, as though they had known she was coming here.",
+"Laura was terribly nervous. Tossing the velvet ribbon over her shoulder, she said to a woman standing by, \"Is this Mrs. Scott's house?\" and the woman, smiling queerly, said, \"It is, my lass.\"",
+"Oh, to be away from this! She actually said, \"Help me, God,\" as she walked up the tiny path and knocked. To be away from those staring eyes, or to be covered up in anything, one of those women's shawls even. I'll just leave the basket and go, she decided. I shan't even wait for it to be emptied."],
+bn:"মা কিছু বলতে গিয়েও থেমে গেলেন। সন্ধ্যার আবছা আলোয় লরা পাহাড় বেয়ে নামল; পার্টির স্মৃতিতে ভরা মনে সে মৃত্যুটা অনুভব করতে পারছিল না। গলিতে ঢুকে নিজের জমকালো পোশাক ও টুপির জন্য সে অস্বস্তি বোধ করল। মিসেস স্কটের বাড়ির সামনে লোকজনের ভিড় দেখে সে ভয় পেল, ঝুড়ি রেখে ফিরে যেতে চাইল।",fn:[]},
+{n:64,head:"The Garden Party",paras:[
+"Then the door opened. A little woman in black showed in the gloom.",
+"Laura said, \"Are you Mrs. Scott?\" But to her horror the woman answered, \"Walk in please, miss,\" and she was shut in the passage.",
+"\"No,\" said Laura, \"I don't want to come in. I only want to leave this basket. Mother sent-\"",
+"The little woman in the gloomy passage seemed not to have heard her. \"Step this way, please, miss,\" she said in an oily voice, and Laura followed her.",
+"She found herself in a wretched little low kitchen, lighted by a smoky lamp. There was a woman sitting before the fire.",
+"\"Em,\" said the little creature who had let her in. \"Em! It's a young lady.\" She turned to Laura. She said meaningly, \"I'm 'er sister, miss. You'll excuse 'er, won't you?\"",
+"\"Oh, but of course!\" said Laura. \"Please, please don't disturb her. I-I only want to leave-\"",
+"But at that moment the woman at the fire turned round. Her face, puffed up, red, with swollen eyes and swollen lips, looked terrible. She seemed as though she couldn't understand why Laura was there. What did it mean? Why was this stranger standing in the kitchen with a basket? What was it all about? And the poor face puckered up again.",
+"\"All right, my dear,\" said the other. \"I'll thank the young lady.\"",
+"And again she began, \"You'll excuse her, miss, I'm sure,\" and her face, swollen too, tried an oily smile.",
+"Laura only wanted to get out, to get away. She was back in the passage. The door opened. She walked straight through into the bedroom, where the dead man was lying.",
+"\"You'd like a look at 'im, wouldn't you?\" said Em's sister, and she brushed past Laura over to the bed. \"Don't be afraid, my lass,\"-and now her voice sounded fond and sly, and fondly she drew down the sheet-\" 'e looks a picture. There's nothing to show. Come along, my dear.\"",
+"Laura came."],
+bn:"কালো পোশাকের ছোট্ট এক মহিলা লরাকে ভেতরে ঢুকিয়ে নিলেন; তিনি মিসেস স্কটের বোন। রান্নাঘরে আগুনের পাশে ফোলা মুখের শোকাহত মিসেস স্কট বসে ছিলেন। লরা শুধু ঝুড়ি রেখে যেতে চাইল, কিন্তু বোন তাকে মৃতদেহ দেখতে শোবার ঘরে নিয়ে গেলেন।",fn:[]},
+{n:65,head:"A Realm of English (B) Selection",paras:[
+"There lay a young man, fast asleep-sleeping so soundly, so deeply, that he was far, far away from them both. Oh, so remote, so peaceful. He was dreaming. Never wake him up again. His head was sunk in the pillow, his eyes were closed; they were blind under the closed eyelids. He was given up to his dream. What did garden-parties and baskets and lace frocks matter to him? He was far from all those things. He was wonderful, beautiful. While they were laughing and while the band was playing, this marvel had come to the lane. Happy... happy.... All is well, said that sleeping face. This is just as it should be. I am content\u00B9\u2077.",
+"But all the same you had to cry, and she couldn't go out of the room without saying something to him. Laura gave a loud childish sob.",
+"\"Forgive my hat,\" she said.",
+"And this time she didn't wait for Em's sister. She found her way out of the door, down the path, past all those dark people. At the corner of the lane she met Laurie.",
+"He stepped out of the shadow. \"Is that you, Laura?\"",
+"\"Yes.\"",
+"\"Mother was getting anxious. Was it all right?\"",
+"\"Yes, quite. Oh, Laurie!\" She took his arm, she pressed up against him.",
+"\"I say, you're not crying, are you?\" asked her brother.",
+"Laura shook her head. She was.",
+"Laurie put his arm round her shoulder. \"Don't cry,\" he said in his warm, loving voice. \"Was it awful\u00B9\u2078?\"",
+"\"No,\" sobbed Laura. \"It was simply marvellous. But Laurie-\" She stopped, she looked at her brother. \"Isn't life,\" she stammered, \"isn't life-\" But what life was she couldn't explain. No matter. He quite understood.",
+"\"Isn't it, darling?\" said Laurie."],
+bn:"লরা দেখল এক যুবক গভীর ঘুমে, শান্ত ও সুন্দর — পার্টি, ঝুড়ি বা পোশাক তার কাছে অর্থহীন। লরা কেঁদে বলল, 'আমার টুপির জন্য ক্ষমা করো।' গলির মোড়ে লরির সঙ্গে দেখা হলে সে বলল অভিজ্ঞতাটা 'অপূর্ব', কিন্তু জীবন কী তা ব্যাখ্যা করতে পারল না। লরি নীরবে বুঝল।",
+fn:["Content : pleased, satisfied","Awful : very bad, unpleasant."]},
+{n:66,head:"The Garden Party — Insight Check",paras:[
+"A. Short Answer Type Questions:",
+"1. How was the weather in the morning on the day of the garden party? (02)",
+"2. Who hosted the Garden Party? Where was it hosted? (02)",
+"Delve Deep",
+"B. Descriptive Type Questions:",
+"1. Comment on the main theme of the story. (06)",
+"2. How does the 'garden' in the story reflect the characteristics of modern society? Comment (06)"],
+bn:"অনুশীলনী: (ক) সংক্ষিপ্ত উত্তরভিত্তিক প্রশ্ন ২টি (প্রতিটি ২ নম্বর); (খ) বর্ণনামূলক প্রশ্ন ২টি (প্রতিটি ৬ নম্বর)।",fn:[]}
+],
+vocab:{
+weather:["আবহাওয়া","ওয়েদার","noun","conditions of the atmosphere","the day's weather was perfect"],
+ideal:["আদর্শ / উপযুক্ত","আইডিয়াল","adjective","perfect or suitable","perfect for the garden party"],
+perfect:["নিখুঁত","পারফেক্ট","adjective","without any fault","a faultless day"],
+windless:["বাতাসহীন","উইন্ডলেস","adjective","having no wind","calm day"],
+veiled:["আবৃত / ঢাকা","ভেইল্ড","adjective","covered or hidden lightly","sky's blue softly covered with golden haze"],
+haze:["কুয়াশার মতো ঝাপসা আবরণ","হেইজ","noun","light mist","golden mist in the sky"],
+gardener:["মালি","গার্ডনার","noun","person who looks after a garden","he cut the lawns"],
+lawns:["ঘাসে ঢাকা জমি","লনস","noun","areas of short grass","mowed by the gardener"],
+roses:["গোলাপ","রোজেজ","noun","a popular flower","impress garden-party guests"],
+archangels:["প্রধান দেবদূত","আর্কএঞ্জেলস","noun","high-ranking angels","roses bowed as if angels visited"],
+marquee:["বড় অনুষ্ঠান করার জন্য বড় তাঁবু","মার্কি","noun","a large tent used for an event","tent for the party"],
+supervise:["তদারকি করা","সুপারভাইজ","verb","to watch over work","Laura oversees the men"],
+turban:["পাগড়ি / মাথার কাপড়","টার্বান","noun","cloth wrapped round the head","Meg's wet hair covered"],
+butterfly:["প্রজাপতি","বাটারফ্লাই","noun","a colourful insect","Jose, light and showy"],
+artistic:["শিল্পীমনস্ক","আর্টিস্টিক","adjective","good at creative things","why Laura is sent"],
+delicious:["সুস্বাদু / মনোরম","ডিলিশাস","adjective","very pleasant","joy of eating outdoors"],
+canvas:["মোটা কাপড়","ক্যানভাস","noun","strong cloth","wrapped around tent poles"],
+severe:["কঠোর","সিভিয়ার","adjective","strict, serious","Laura tries to look strict"],
+affected:["কৃত্রিম / ভান করা","অ্যাফেক্টেড","adjective","unnatural, put on","copying mother's voice"],
+ashamed:["লজ্জিত","অ্যাশেমড","adjective","embarrassed","for sounding fake"],
+stammered:["তোতলিয়ে বলল","স্ট্যামারড","verb","spoke with difficulty","Laura's nervous speech"],
+lanky:["লম্বা ও রোগা","ল্যাঙ্কি","adjective","tall and thin","the tallest workman"],
+freckled:["ছিটেফোঁটা দাগযুক্ত","ফ্রেকলড","adjective","having small brown spots on skin","the tall workman"],
+friendly:["বন্ধুত্বপূর্ণ","ফ্রেন্ডলি","adjective","kind and warm","the workmen's smile"],
+conspicuous:["স্পষ্ট দৃশ্যমান","কনস্পিকিউয়াস","adjective","clearly visible","marquee must be seen easily"],
+haggard:["ক্লান্ত ও অসুস্থ চেহারার","হ্যাগার্ড","adjective","looking exhausted","the pale workman"],
+karakas:["নিউজিল্যান্ডের কমলা ফলের গাছ","কারাকাস","noun","New Zealand trees with orange berries","trees hidden by marquee"],
+band:["বাদ্যদল","ব্যান্ড","noun","group of musicians","to play at the party"],
+lovely:["সুন্দর","লাভলি","adjective","beautiful","the karaka trees"],
+solitary:["একাকী","সলিটারি","adjective","alone","tree like on a desert island"],
+gleaming:["ঝলমলে","গ্লিমিং","adjective","shining","karaka leaves"],
+oeuvre:["সাহিত্যকর্মের সমগ্র সম্ভার","ইউভ্র","noun","the complete works of an artist","Mansfield's writings"],
+modernist:["আধুনিকতাবাদী","মডার্নিস্ট","adjective","of the modernist art movement","Mansfield's movement"],
+indelible:["অমোচনীয়","ইন্ডেলিবল","adjective","cannot be erased","brother's death left a mark"],
+class:["শ্রেণি","ক্লাস","noun","social group","class consciousness"],
+consciousness:["চেতনা","কনশাসনেস","noun","awareness","awareness of class"],
+death:["মৃত্যু","ডেথ","noun","end of life","the workman's death"],
+innocence:["নিষ্পাপতা","ইনোসেন্স","noun","lack of guilt or experience","Laura loses it"],
+insensitivity:["অসংবেদনশীলতা","ইনসেনসিটিভিটি","noun","lack of feeling","the Sheridans' attitude"],
+story:["গল্প","স্টোরি","noun","a narrative","a short story"],
+author:["লেখক","অথর","noun","writer","Mansfield"],
+absurd:["উদ্ভট / অযৌক্তিক","অ্যাবসার্ড","adjective","wildly unreasonable","Laura calls class distinctions absurd"],
+crimson:["গাঢ় লাল","ক্রিমজন","adjective","rich deep red","stems of the canna lilies"],
+radiant:["দীপ্তিময়","রেডিয়ান্ট","adjective","shining brightly","the pink lilies"],
+lavender:["ল্যাভেন্ডার (সুগন্ধি ফুল)","ল্যাভেন্ডার","noun","a fragrant purple plant","the workman smells it"],
+florist:["ফুল বিক্রেতা","ফ্লোরিস্ট","noun","person who sells flowers","brings canna lilies"],
+telephone:["টেলিফোন","টেলিফোন","noun","device for talking at a distance","Kitty calls Laura"],
+laura:["লরা (প্রধান চরিত্র)","লরা","noun","the story's main character","Laura Sheridan"]
+},
+saqs:[
+{q:"How was the weather in the morning on the day of the garden party?",tag:"📖 Textbook Question ⭐ Important",a:"The weather in the morning was ideal. It was windless and warm, and the sky was cloudless. The blue sky was covered with a light golden haze, as often happens in early summer. It was such a perfect day that it seemed the family had ordered it for the garden-party.",bn:"সেদিন সকালের আবহাওয়া ছিল আদর্শ — বাতাসহীন, উষ্ণ ও মেঘহীন। আকাশের নীল রঙে হালকা সোনালি কুয়াশার আভা ছিল।",k:["windless, warm","cloudless sky","golden haze","like early summer"]},
+{q:"Who hosted the Garden Party? Where was it hosted?",tag:"📖 Textbook Question ⭐ Important",a:"The garden party was hosted by the Sheridan family, led by Mrs Sheridan, with her children helping. It was held in the Sheridans' own large garden, where a marquee was put up near the tennis-court, against the karaka trees.",bn:"গার্ডেন পার্টির আয়োজক ছিল শেরিডান পরিবার। এটি তাদের নিজেদের বিশাল বাগানে হয়েছিল, যেখানে টেনিস-কোর্টের কাছে তাঁবু খাটানো হয়েছিল।",k:["Sheridan family","their own garden","marquee near tennis-court"]}],
+broad:[
+{q:"Comment on the main theme of the story.",tag:"📖 Textbook Question ⭐ Important",intro:"Katherine Mansfield's 'The Garden Party' explores the clash between privileged comfort and the harsh reality of death and poverty.",main:"The story sets the Sheridans' glamorous party beside the accidental death of Scott, a poor carter. Laura's instinct is to stop the party, but Jose and Mrs Sheridan dismiss her as 'absurd' and 'extravagant'. Class barriers make the family indifferent to a neighbour's tragedy, and Laura herself is briefly persuaded by the compliments on her new hat.",ref:"Mrs Sheridan sends a basket of leftover food; Laura sees the dead man at Mrs Scott's cottage and whispers 'Forgive my hat'.",concl:"The central theme is the awakening of moral sensitivity in Laura, through class difference, and her first understanding of life and death.",bn:"গল্পের মূল বিষয় ধনী শেরিডান পরিবারের আনন্দ ও দরিদ্র স্কটের মৃত্যুর বৈপরীত্য। লরা সংবেদনশীল হলেও পরিবারের চাপে চুপ থাকে। শেষে মৃতদেহ দেখে সে জীবন ও মৃত্যুর সত্য বুঝতে শুরু করে।"},
+{q:"How does the 'garden' in the story reflect the characteristics of modern society? Comment.",tag:"📖 Textbook Question ⭐ Important",intro:"The Sheridans' garden is a symbol of a sheltered, wealthy world, resembling modern society's divisions.",main:"The garden is beautiful, orderly and full of roses and lilies, but it is cut off from the poor cottages below the hill. Like modern society, it values appearance, pleasure and status over empathy. The guests enjoy the party while a death occurs nearby, and the family treats the poor as an 'eyesore'.",ref:"The description of cottages as 'mean dwellings' contrasts with the Sheridans' silvery smoke; the party goes on despite Scott's death.",concl:"Thus the garden reflects a society that is class-divided, self-absorbed and insensitive to suffering.",bn:"বাগান ধনীদের সুরক্ষিত ও বিলাসী জগতের প্রতীক। আধুনিক সমাজের মতো এখানেও বাহ্যিক সৌন্দর্য ও আনন্দ বেশি গুরুত্ব পায়, দরিদ্রের দুঃখে সহানুভূতি কম।"}]};
+
+
+const EXTRA=`the|নির্দিষ্ট বোঝায় (এই/সেই)|দ|article|points to a known thing
+a|একটি|আ|article|one
+an|একটি|অ্যান|article|one
+and|এবং|অ্যান্ড|conjunction|joins words
+of|-এর|অভ|preposition|belonging to
+to|প্রতি / -কে|টু|preposition|towards
+in|মধ্যে|ইন|preposition|inside
+on|উপরে|অন|preposition|above, touching
+at|-এ|অ্যাট|preposition|in a place
+for|জন্য|ফর|preposition|meant for
+with|সঙ্গে|উইথ|preposition|together
+but|কিন্তু|বাট|conjunction|however
+as|যেমন / হিসেবে|অ্যাজ|conjunction|like
+was|ছিল|ওয়জ|verb|past of is
+were|ছিল (বহুবচন)|ওয়ার|verb|past of are
+is|হয় / আছে|ইজ|verb|present of be
+be|হওয়া|বি|verb|to exist
+had|ছিল / পেয়েছিল|হ্যাড|verb|past of have
+have|আছে|হ্যাভ|verb|to own
+not|না|নট|adverb|negative word
+she|সে (নারী)|শি|pronoun|a girl or woman
+he|সে (পুরুষ)|হি|pronoun|a boy or man
+they|তারা|দে|pronoun|those people
+her|তার (নারী)|হার|pronoun|belonging to her
+his|তার (পুরুষ)|হিজ|pronoun|belonging to him
+it|এটি|ইট|pronoun|a thing
+you|তুমি / আপনি|ইউ|pronoun|the person spoken to
+i|আমি|আই|pronoun|myself
+that|যে / ওটা|দ্যাট|pronoun|that thing
+this|এটা|দিস|pronoun|this thing
+said|বলল|সেড|verb|spoke
+mother|মা|মাদার|noun|female parent
+father|বাবা|ফাদার|noun|male parent
+children|শিশুরা / সন্তানরা|চিলড্রেন|noun|young people
+sister|বোন|সিস্টার|noun|female sibling
+brother|ভাই|ব্রাদার|noun|male sibling
+breakfast|সকালের খাবার|ব্রেকফাস্ট|noun|first meal of the day
+sky|আকাশ|স্কাই|noun|space above earth
+cloud|মেঘ|ক্লাউড|noun|white mass in the sky
+dawn|ভোর|ডন|noun|first light of day
+daisy|ডেইজি ফুল|ডেইজি|noun|a small white flower
+bushes|ঝোপ|বুশেজ|noun|small woody plants
+hair|চুল|হেয়ার|noun|strands on the head
+coffee|কফি|কফি|noun|a hot drink
+curl|কোঁকড়ানো চুল|কার্ল|noun|a coil of hair
+cheek|গাল|চিক|noun|side of the face
+silk|রেশম|সিল্ক|noun|smooth soft cloth
+petticoat|অন্তর্বাস / সায়া|পেটিকোট|noun|a woman's underskirt
+kimono|জাপানি ঢিলে পোশাক|কিমোনো|noun|a loose Japanese robe
+arrange|সাজানো / গোছানো|অ্যারেঞ্জ|verb|put in order
+bread|রুটি|ব্রেড|noun|baked food
+butter|মাখন|বাটার|noun|dairy spread
+workmen|শ্রমিকরা|ওয়ার্কমেন|noun|men who do manual work
+staves|লাঠি / খুঁটি|স্টেভজ|noun|poles
+blushed|লজ্জায় লাল হল|ব্লাশড|verb|turned red in the face
+straw|খড়|স্ট্র|noun|dried stalks
+smiled|হাসল|স্মাইল্ড|verb|showed a smile
+eyes|চোখ|আইজ|noun|organs of sight
+frowned|ভ্রু কুঁচকাল|ফ্রাউনড|verb|showed displeasure
+tennis-court|টেনিস খেলার মাঠ|টেনিস কোর্ট|noun|ground for tennis
+pale|ফ্যাকাশে|পেল|adjective|lacking colour
+gently|আস্তে / নম্রভাবে|জেন্টলি|adverb|softly
+interrupted|বাধা দিল|ইন্টারাপ্টেড|verb|broke into speech
+trees|গাছ|ট্রিজ|noun|tall plants
+leaves|পাতা|লিভজ|noun|green parts of a plant
+fruit|ফল|ফ্রুট|noun|edible plant product
+island|দ্বীপ|আইল্যান্ড|noun|land surrounded by water
+proud|গর্বিত|প্রাউড|adjective|feeling pride
+splendour|জাঁকজমক|স্প্লেন্ডার|noun|great beauty
+gesture|অঙ্গভঙ্গি|জেসচার|noun|a meaningful movement
+envelope|খাম|এনভেলপ|noun|paper cover for letters
+hammers|হাতুড়ি|হ্যামারজ|noun|striking tools
+whistled|শিস দিল|হুইসল্ড|verb|made a whistle sound
+conventions|সামাজিক রীতিনীতি|কনভেনশনস|noun|accepted social customs
+despised|ঘৃণা করত|ডিসপাইজড|verb|hated strongly
+hall|প্রবেশকক্ষ|হল|noun|entrance room
+office|অফিস|অফিস|noun|place of work
+squeeze|আলতো চাপ / আলিঙ্গন|স্কুইজ|noun|a gentle hug
+piano|পিয়ানো|পিয়ানো|noun|a musical instrument
+kitchen|রান্নাঘর|কিচেন|noun|room for cooking
+sigh|দীর্ঘশ্বাস|সাই|noun|a long breath of relief
+silver|রুপালি|সিলভার|adjective|shiny grey-white
+tray|ট্রে|ট্রে|noun|flat carrying board
+pink|গোলাপি|পিঙ্ক|adjective|light red
+lilies|লিলি ফুল|লিলিজ|noun|large flowers
+moan|মৃদু আর্তনাদ|মোন|noun|a low sound
+faint|ক্ষীণ|ফেইন্ট|adjective|weak
+mistake|ভুল|মিস্টেক|noun|an error
+honoured|সম্মানিত|অনার্ড|adjective|respected
+guest|অতিথি|গেস্ট|noun|visitor
+respectful|শ্রদ্ধাশীল|রিস্পেক্টফুল|adjective|showing respect
+upbringing|লালনপালন|আপব্রিংগিং|noun|how one was raised
+chap|লোক / ছেলে|চ্যাপ|noun|a man (informal)
+lawn|ঘাসের মাঠ|লন|noun|grassy area`;
+EXTRA.split('\n').forEach(l=>{const a=l.split('|');if(a.length>4&&!Object.prototype.hasOwnProperty.call(lesson.vocab,a[0]))lesson.vocab[a[0]]=[a[1],a[2],a[3],a[4],'as used in the story']});
+
+const EX2=`will|হবে|verb
+would|হত|verb
+do|করা|verb
+did|করল|verb
+can|পারা|verb
+could|পারত|verb
+should|উচিত|verb
+am|আছি|verb
+are|আছ / আছে|verb
+been|হয়েছে|verb
+my|আমার|pronoun
+your|তোমার|pronoun
+their|তাদের|pronoun
+we|আমরা|pronoun
+me|আমাকে|pronoun
+him|তাকে|pronoun
+them|তাদের|pronoun
+what|কী|pronoun
+when|যখন|adverb
+where|কোথায়|adverb
+who|কে|pronoun
+why|কেন|adverb
+how|কীভাবে|adverb
+so|তাই / এত|adverb
+if|যদি|conjunction
+or|অথবা|conjunction
+by|দ্বারা|preposition
+from|থেকে|preposition
+up|উপরে|adverb
+out|বাইরে|adverb
+down|নিচে|adverb
+over|উপর দিয়ে|preposition
+into|ভেতরে|preposition
+no|না|adverb
+yes|হ্যাঁ|adverb
+all|সব|pronoun
+some|কিছু|pronoun
+very|খুব|adverb
+too|খুব / -ও|adverb
+more|আরও|adverb
+much|অনেক|adverb
+many|অনেক|adjective
+then|তখন|adverb
+there|সেখানে|adverb
+here|এখানে|adverb
+now|এখন|adverb
+just|শুধু / এইমাত্র|adverb
+still|তবুও / স্থির|adverb
+always|সবসময়|adverb
+one|এক|noun
+two|দুই|noun
+four|চার|noun
+mrs|শ্রীমতী|noun
+mowing|ঘাস কাটা|verb
+sweeping|ঝাড়ু দেওয়া|verb
+grass|ঘাস|noun
+shine|ঝলমল করা|verb
+impress|মুগ্ধ করা|verb
+certain|নিশ্চিত|adjective
+literally|আক্ষরিকভাবে|adverb
+bowed|নুয়ে পড়ল|verb
+determined|দৃঢ়সংকল্প|adjective
+treat|আচরণ করা|verb
+washed|ধুয়েছিল|verb
+wet|ভেজা|adjective
+excuse|অজুহাত|noun
+path|পথ|noun
+carried|বহন করল|verb
+slung|ঝোলানো|verb
+impressive|প্রভাবশালী|adjective
+wished|ইচ্ছা করল|verb
+throw|ছুঁড়ে ফেলা|verb
+short-sighted|কাছের জিনিস দেখতে পায় এমন|adjective
+voice|কণ্ঠস্বর|noun
+fearfully|ভীষণভাবে|adverb
+fellow|লোক|noun
+easy|সহজ / স্বচ্ছন্দ|adjective
+recovered|সামলে উঠল|verb
+nice|ভালো|adjective
+cheer|উৎসাহিত হওয়া|verb
+bite|কামড়ানো|verb
+beautiful|সুন্দর|adjective
+mention|উল্লেখ করা|verb
+business-like|কাজের মতো গম্ভীর|adjective
+stared|তাকিয়ে রইল|verb
+thrust|ঠেলে বের করা|verb
+fancy|পছন্দ করা|verb
+bang|সোজা ধাক্কা|noun
+follow|বুঝতে পারা|verb
+corner|কোণ|noun
+suggested|প্রস্তাব দিল|verb
+scanned|চোখ বুলাল|verb
+mind|আপত্তি করা|verb
+against|-এর গায়ে|preposition
+hidden|লুকানো|adjective
+broad|চওড়া|adjective
+clusters|থোকা|noun
+yellow|হলুদ|adjective
+imagined|কল্পনা করল|verb
+lifting|তোলা|verb
+silent|নীরব|adjective
+sprig|ছোট ডাল|noun
+snuffed|শুঁকল|verb
+smell|গন্ধ|noun
+forgot|ভুলে গেল|verb
+extraordinarily|অসাধারণভাবে|adverb
+silly|বোকা|adjective
+supper|রাতের খাবার|noun
+fault|দোষ|noun
+decided|সিদ্ধান্ত নিল|verb
+distinctions|ভেদাভেদ|noun
+atom|অতি সামান্য কণা|noun
+wooden|কাঠের|adjective
+matey|বন্ধু (অনানুষ্ঠানিক)|noun
+prove|প্রমাণ করা|verb
+stupid|বোকামিপূর্ণ|adjective
+drawing|আঁকা ছবি|noun
+cried|চিৎকার করল|verb
+skimmed|ছুটে গেল|verb
+steps|সিঁড়ি|noun
+veranda|বারান্দা|noun
+porch|প্রবেশ-বারান্দা|noun
+ready|প্রস্তুত|adjective
+squiz|এক নজর|noun
+coat|কোট|noun
+pressing|ইস্ত্রি করা|noun
+suddenly|হঠাৎ|adverb
+gasped|হাঁপিয়ে বলল|verb
+boyish|ছেলেমানুষি|adjective
+dash|দৌড়ে যাও|verb
+lunch|দুপুরের খাবার|noun
+delighted|আনন্দিত|adjective
+scratch|যা আছে তাই দিয়ে (মামুলি)|adjective
+sandwich|স্যান্ডউইচ|noun
+crusts|রুটির শক্ত পাশ|noun
+meringue|ডিমের সাদা অংশের মিষ্টি|noun
+certainly|অবশ্যই|adverb
+flung|ছুঁড়ে দিল|verb
+stretched|টানটান করল|verb
+alive|জীবন্ত|adjective
+soft|নরম|adjective
+baize|সবুজ মোটা কাপড়|noun
+thud|ধপ শব্দ|noun
+muffled|চাপা|adjective
+chuckling|খিলখিল|adjective
+heavy|ভারী|adjective
+stiff|শক্ত|adjective
+tiny|অতি ক্ষুদ্র|adjective
+spots|ফোঁটা / দাগ|noun
+darling|প্রিয়|adjective
+pealed|বেজে উঠল|verb
+rustle|খসখস শব্দ|noun
+murmured|বিড়বিড় করল|verb
+careless|অযত্নে|adjective
+indeed|সত্যিই|adverb
+shallow|অগভীর|adjective
+pots|টব|noun
+frighteningly|ভয় ধরানোভাবে|adverb
+stems|ডাঁটা|noun
+crouched|উবু হয়ে বসল|verb
+blaze|উজ্জ্বল আভা|noun
+fingers|আঙুল|noun
+lips|ঠোঁট|noun
+breast|বুক|noun
+nobody|কেউ না|pronoun
+joined|যোগ দিল|verb`;
+EX2.split('\n').forEach(l=>{const a=l.split('|');if(!Object.prototype.hasOwnProperty.call(lesson.vocab,a[0]))lesson.vocab[a[0]]=[a[1],'',a[2],'','in the story']});
+let EX2b;
+EX2b=`little|ছোট|adjective
+jose|জোসে (নাম)|noun
+like|মতো / পছন্দ করা|preposition
+look|তাকানো / চেহারা|verb
+oh|ওহ|interjection
+sheridan|শেরিডান (পদবি)|noun
+man|পুরুষ / লোক|noun
+back|পিছনে / পিঠ|adverb
+sadie|সাদি (পরিচারিকা)|noun
+cook|রাঁধুনি|noun
+come|আসা|verb
+put|রাখা|verb
+hat|টুপি|noun
+laurie|লরি (লরার ভাই)|noun
+seemed|মনে হল|verb
+came|এল|verb
+go|যাওয়া|verb
+quite|বেশ / একেবারে|adverb
+dear|প্রিয়|adjective
+miss|কুমারী / ম্যাডাম|noun
+woman|মহিলা|noun
+about|সম্পর্কে|preposition
+garden|বাগান|noun
+life|জীবন|noun
+men|পুরুষরা|noun
+looked|তাকাল|verb
+turned|ঘুরল|verb
+those|ওই|pronoun
+course|অবশ্যই (of course)|noun
+door|দরজা|noun
+party|পার্টি / অনুষ্ঠান|noun
+good|ভালো|adjective
+right|ঠিক|adjective
+must|অবশ্যই করতে হবে|verb
+well|আচ্ছা / ভালো|adverb
+people|মানুষ|noun
+want|চাওয়া|verb
+away|দূরে|adverb
+big|বড়|adjective
+morning|সকাল|noun
+such|এমন|adjective
+say|বলা|verb
+going|যাচ্ছে|verb
+house|বাড়ি|noun
+face|মুখ|noun
+way|পথ / উপায়|noun
+after|পরে|preposition
+dark|অন্ধকার / গাঢ়|adjective
+took|নিল|verb
+stop|থামানো|verb
+off|বন্ধ / দূরে|adverb
+tell|বলা|verb
+round|চারপাশে|adverb
+never|কখনো না|adverb
+godber's|গডবারের (মিষ্টির দোকান)|noun
+began|শুরু করল|verb
+again|আবার|adverb
+basket|ঝুড়ি|noun
+garden-party|বাগানের পার্টি|noun
+warm|উষ্ণ|adjective
+meg|মেগ (লরার বোন)|noun
+hans|হ্যান্স (চাকর)|noun
+kitty|কিটি (বান্ধবী)|noun
+scott|স্কট (মৃত গাড়োয়ান)|noun
+em|এম (মিসেস স্কট)|noun
+thought|ভাবল|verb
+asked|জিজ্ঞেস করল|verb
+knew|জানত|verb
+saw|দেখল|verb
+heard|শুনল|verb
+gave|দিল|verb
+found|খুঁজে পেল|verb
+left|রেখে গেল / বাঁ|verb
+felt|অনুভব করল|verb
+wanted|চাইল|verb
+dead|মৃত|adjective
+killed|নিহত|adjective
+accident|দুর্ঘটনা|noun
+poor|গরিব / বেচারা|adjective
+cottages|কুটির|noun
+lane|গলি|noun
+hill|পাহাড়ের ঢাল|noun
+road|রাস্তা|noun
+sandwiches|স্যান্ডউইচ|noun
+cream|ক্রিম|noun
+puffs|ক্রিম পাফ (মিষ্টি)|noun
+child|শিশু|noun
+girl|মেয়ে|noun
+boy|ছেলে|noun
+daddy|বাবা|noun
+mummy|মা|noun
+table|টেবিল|noun
+room|ঘর|noun
+bedroom|শোবার ঘর|noun
+sofa|সোফা|noun
+mirror|আয়না|noun
+ribbon|ফিতা|noun
+velvet|মখমল|noun
+black|কালো|adjective
+gold|সোনালি|adjective
+frock|পোশাক|noun
+lace|জালি কাপড়|noun
+shawls|শাল|noun
+tea|চা|noun
+drink|পান করা|verb
+laughter|হাসি|noun
+shadow|ছায়া|noun
+gloom|অন্ধকার|noun
+passage|সরু পথ|noun
+fire|আগুন|noun
+lamp|বাতি|noun
+swollen|ফোলা|adjective
+terrible|ভয়ংকর|adjective
+asleep|ঘুমন্ত|adjective
+peaceful|শান্ত|adjective
+dream|স্বপ্ন|noun
+marvellous|অপূর্ব|adjective
+awful|ভয়ানক|adjective
+forgive|ক্ষমা করা|verb
+shoulder|কাঁধ|noun
+hand|হাত|noun
+head|মাথা|noun
+time|সময়|noun
+day|দিন|noun
+afternoon|বিকেল|noun
+moment|মুহূর্ত|noun
+idea|ধারণা|noun
+food|খাবার|noun
+wife|স্ত্রী|noun
+young|তরুণ|adjective
+old|বৃদ্ধ|adjective
+happy|সুখী|adjective
+sorry|দুঃখিত|adjective
+sympathetic|সহানুভূতিশীল|adjective
+heartless|নির্দয়|adjective
+sentimental|আবেগপ্রবণ|adjective
+drunken|মাতাল|adjective
+workman|শ্রমিক|noun
+servants|চাকর-বাকর|noun
+listen|শোনা|verb
+understand|বোঝা|verb
+remember|মনে রাখা|verb
+hurried|তাড়াহুড়ো করল|verb
+walked|হাঁটল|verb
+ran|দৌড়াল|verb
+sat|বসল|verb
+stood|দাঁড়াল|verb
+jumped|লাফিয়ে উঠল|verb
+cry|কাঁদা|verb
+sobbed|ফুঁপিয়ে বলল|verb
+whispered|ফিসফিস করল|verb
+smile|হাসি|noun
+kiss|চুমু|noun
+also|-ও / এছাড়াও|adverb
+another|আরেকটি|adjective
+every|প্রতিটি|adjective
+something|কিছু|pronoun
+nothing|কিছুই না|pronoun
+everything|সবকিছু|pronoun
+anything|যেকোনো কিছু|pronoun
+because|কারণ|conjunction
+though|যদিও|conjunction
+while|যখন / যতক্ষণ|conjunction
+than|চেয়ে|conjunction
+which|যেটি|pronoun
+there's|সেখানে আছে|verb`;
+EX2b.split('\n').forEach(l=>{const a=l.split('|');if(!Object.prototype.hasOwnProperty.call(lesson.vocab,a[0]))lesson.vocab[a[0]]=[a[1],'',a[2],'','in the story']});
+const NK=t=>t.replace(/[^A-Za-z]/g,'').toLowerCase();
+lesson.sbn={};[["And after all the weather was ideal.","আর সব মিলিয়ে আবহাওয়া ছিল আদর্শ।"],["They could not have had a more perfect day for a garden-party if they had ordered it.","গার্ডেন-পার্টির জন্য এর চেয়ে নিখুঁত দিন তারা পেত না, অর্ডার দিলেও।"],["Windless, warm, the sky without a cloud.","বাতাসহীন, উষ্ণ, আকাশে একটুও মেঘ নেই।"],["Only the blue was veiled with a haze of light gold, as it is sometimes in early summer.","নীল আকাশ শুধু হালকা সোনালি কুয়াশায় ঢাকা ছিল, যেমন গ্রীষ্মের শুরুতে হয়।"],["The gardener had been up since dawn, mowing the lawns and sweeping them, until the grass and the dark flat rosettes where the daisy plants had been seemed to shine.","মালি ভোর থেকে ঘাস কেটে ঝাড়ু দিয়েছিল, ফলে ঘাস ও ডেইজি গাছের গাঢ় চ্যাপ্টা গুচ্ছগুলো ঝকঝক করছিল।"],["Breakfast was not yet over before the men came to put up the marquee.","সকালের খাবার শেষ হওয়ার আগেই লোকজন তাঁবু খাটাতে এল।"],["Where do you want the marquee put, mother?","মা, তাঁবুটা কোথায় বসাতে চান?"],["You'll have to go, Laura; you're the artistic one.","লরা, তোমাকেই যেতে হবে; তুমিই তো শিল্পীমনের।"],["Away Laura flew, still holding her piece of bread-and-butter.","লরা রুটি-মাখন হাতে নিয়েই উড়ে চলে গেল।"],["Good morning, she said, copying her mother's voice.","'সুপ্রভাত', সে বলল, মায়ের গলা নকল করে।"]].forEach(x=>lesson.sbn[NK(x[0])]=x[1]);
+lesson.analysis=[
+{t:"Historical Background",en:"Published in 1922, soon after World War I. Mansfield's brother Leslie died in the war, and the story's mix of joy and sudden death reflects that loss. The setting is based on her childhood home in colonial New Zealand, where class divisions were sharp. It belongs to the Modernist movement, which turned from grand plots to inner feelings.",bn:"গল্পটি ১৯২২ সালে, প্রথম বিশ্বযুদ্ধের পরে প্রকাশিত। যুদ্ধে লেখিকার ভাই লেসলির মৃত্যু গল্পের আনন্দ ও আকস্মিক মৃত্যুর মিশ্রণে প্রতিফলিত। পটভূমি নিউজিল্যান্ডে তাঁর শৈশবের বাড়ি, যেখানে শ্রেণিভেদ প্রখর ছিল। এটি আধুনিকতাবাদী ধারার গল্প।"},
+{t:"Critical Analysis",en:"The story is ironic: a rich family's pleasure is placed beside a poor family's grief. Laura is sensitive but is easily swayed by her hat and her mother's authority, so her growth is real yet incomplete. The ending is open: Laura feels the beauty in death but cannot explain it, and Laurie's 'He quite understood' suggests wordless sympathy. Critics differ on whether Laura truly changes or only glimpses truth.",bn:"গল্পে বিদ্রূপ আছে: ধনীর আনন্দের পাশে গরিবের শোক। লরা সংবেদনশীল, কিন্তু টুপি ও মায়ের প্রভাবে সহজে বদলে যায়। শেষটি উন্মুক্ত — লরা মৃত্যুর সৌন্দর্য অনুভব করে, কিন্তু ব্যাখ্যা করতে পারে না; লরি নীরবে বোঝে।"},
+{t:"Technical Analysis",en:"Narration is third person, but through Laura's mind (free indirect speech, stream of consciousness). Symbols: garden, marquee, hat, lilies, basket. Contrast structure: up the hill (party, light, colour) versus down the hill (cottages, dusk, gloom). Imagery of light, flowers and sound creates mood. Tone shifts from joyful to uneasy to reflective. Time moves from morning to dusk.",bn:"বর্ণনা তৃতীয় পুরুষে হলেও লরার মনের ভেতর দিয়ে (স্ট্রিম অব কনশাসনেস)। প্রতীক: বাগান, তাঁবু, টুপি, লিলি, ঝুড়ি। কাঠামোয় বৈপরীত্য: পাহাড়ের ওপরে আলো-রং, নিচে অন্ধকার কুটির। সুর আনন্দ থেকে অস্বস্তি ও চিন্তায় যায়। সময় সকাল থেকে সন্ধ্যা।"}];
+const PQ="Practice Question";
+lesson.saqs.push(
+{q:"Who is Laura Sheridan?",tag:PQ+" ⭐ Important",a:"Laura Sheridan is the young, sensitive daughter of the Sheridan family and the central character. She is chosen to supervise the workmen because she is the artistic one. Later she is troubled by the death of Mr Scott, the carter.",bn:"লরা শেরিডান পরিবারের তরুণী, সংবেদনশীল কন্যা ও গল্পের মূল চরিত্র। কারিগরদের তদারকির ভার তাকে দেওয়া হয়। পরে স্কটের মৃত্যু তাকে ব্যথিত করে।",k:["youngest sensitive daughter","artistic one","troubled by Scott's death"]},
+{q:"Why did Laura want to stop the garden party?",tag:PQ+" ⭐ Important",a:"Laura wanted to stop the party because a carter named Scott had been killed in an accident in a cottage lane just below their house. She felt it was heartless to hold a party with music while the family mourned nearby.",bn:"কাছের কুটিরে স্কট নামের গাড়োয়ানের মৃত্যু হয়েছিল। তাই লরার মনে হল শোকের পাশে গান-বাজনার পার্টি নির্দয় কাজ।",k:["Scott killed","cottages nearby","band would hurt widow"]},
+{q:"How did Jose react to Laura's suggestion?",tag:PQ,a:"Jose was astonished and annoyed. She called Laura absurd and extravagant, said nobody expected them to stop the party, and remarked that being sentimental would not bring a drunken workman back to life.",bn:"জোসে অবাক ও বিরক্ত হল। সে লরাকে অযৌক্তিক বলল এবং জানাল কেউ পার্টি বন্ধ করার আশা করে না।",k:["astonished","called Laura absurd","unsympathetic"]},
+{q:"Why did Mrs Sheridan order so many canna lilies?",tag:PQ,a:"Mrs Sheridan said that for once in her life she wanted to have enough canna lilies. She saw them in a shop window and thought the garden party was a good excuse to buy them in large numbers.",bn:"মিসেস শেরিডান জীবনে একবার পর্যাপ্ত ক্যানা লিলি চেয়েছিলেন। গার্ডেন পার্টিকে তিনি ভালো অজুহাত হিসেবে নিলেন।",k:["saw them in shop","garden party as excuse","enough lilies"]},
+{q:"What did Mrs Sheridan send to the Scott family, and why?",tag:PQ,a:"Mrs Sheridan sent a basket of leftover sandwiches, cakes and puffs. She thought the children would enjoy the treat and that neighbours calling in could be offered the ready food.",bn:"তিনি পার্টির বাকি স্যান্ডউইচ, কেক ও পাফ ভর্তি ঝুড়ি পাঠান, ভেবেছিলেন বাচ্চারা খুশি হবে।",k:["leftover food","for children","condescending kindness"]},
+{q:"What did Laura say when she saw the dead man?",tag:PQ+" ⭐ Important",a:"Laura gave a childish sob and said, 'Forgive my hat.' She felt ashamed of her party dress in front of the peaceful dead man, who seemed far away from all such worldly things.",bn:"লরা কেঁদে বলল, 'আমার টুপির জন্য ক্ষমা করো।' মৃতের শান্তির সামনে সে নিজের সাজ নিয়ে লজ্জিত হল।",k:["childish sob","Forgive my hat","shame and awe"]});
+lesson.broad.push(
+{q:"Discuss the character of Laura Sheridan.",tag:PQ+" ⭐ Important",intro:"Laura is the central consciousness of 'The Garden Party' and the character who grows most.",main:"She is sensitive, imaginative and free of snobbery: she admires the workmen and wants to stop the party out of sympathy. Yet she is also young and impressionable; her mother's charming hat makes her forget her doubts. At the Scotts' cottage she faces death directly.",ref:"She says 'Forgive my hat' and tells Laurie, 'Isn't life...'.",concl:"Laura moves from innocence towards understanding, making her a symbol of awakening conscience.",bn:"লরা সংবেদনশীল, কল্পনাপ্রবণ ও শ্রেণিগর্বহীন। তবে প্রভাবিতও হয়। মৃতদেহ দেখে সে জীবনের সত্যের দিকে এগোয়।"},
+{q:"Write a note on the ending of the story.",tag:PQ,intro:"The ending gives the story its emotional and moral climax.",main:"Laura sees the dead man and finds him peaceful and beautiful, far beyond garden parties. She cries yet calls the experience marvellous. She cannot define life, but Laurie understands without words.",ref:"'Isn't life...' — 'Isn't it, darling?' said Laurie.",concl:"The open ending shows that deep truths are felt rather than explained.",bn:"লরা মৃতদেহ দেখে শান্তি ও সৌন্দর্য অনুভব করে। সে জীবনকে ব্যাখ্যা করতে পারে না, লরি নীরবে বোঝে।"});
+const $=id=>document.getElementById(id);
+const SS=typeof speechSynthesis!=='undefined'?speechSynthesis:null;
+const D={bm:[],words:[],read:[],saq:[],br:[],fs:19,dark:0,ls:1.7};
+let S=D;try{S=Object.assign({},D,JSON.parse(localStorage.getItem('gp')||'{}'))}catch(e){S=Object.assign({},D)}
+const save=()=>{try{localStorage.setItem('gp',JSON.stringify(S))}catch(e){}};
+let cur=0,mode='en',tab='home',utter=null,rate=1;
+const tabs=[['home','Home'],['read','Read'],['search','Words'],['ana','Analysis'],['saq','SAQ'],['broad','Broad'],['bm','Saved'],['prog','Progress']];
+const sup="\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077";
+function nav(){$('nav').innerHTML=tabs.map(t=>`<button class="${t[0]==tab?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('')}
+function go(t){tab=t;if(SS)SS.cancel();nav();render();scrollTo(0,0)}
+function wrap(t){return t.replace(/[A-Za-z][A-Za-z'’-]*/g,w=>`<span class="w" onclick="showW(this)">${w}</span>`)}
+function find(w){w=w.toLowerCase().replace(/['’](s|ll|m|re|ve|d)$/,'').replace(/n['’]t$/,'');if(w=='ca')w='can';if(w=='wo')w='will';const V=lesson.vocab,H=k=>Object.prototype.hasOwnProperty.call(V,k);if(H(w))return [w,V[w]];
+for(const s of['s','es','ed','d','ing','ly']){if(w.endsWith(s)){const b=w.slice(0,-s.length);for(const c of[b,b+'e',b.slice(0,-1),b+'y'])if(H(c))return[c,V[c]]}}
+const m=w.split('-');if(m.length>1)for(const p of m)if(H(p))return[p,V[p]];return null}
+function showW(el){document.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');
+const raw=el.textContent,f=find(raw);
+if(!S.words.includes(raw.toLowerCase())){S.words.push(raw.toLowerCase());save()}
+$('pop').innerHTML=(f?`<h3>${raw}</h3><p><b>বাংলা অর্থ:</b> ${f[1][0]}</p>${f[1][1]?`<p><b>Pronunciation:</b> ${f[1][1]}</p>`:''}<p><b>Part of speech:</b> ${f[1][2]}</p>${f[1][3]?`<p><b>Simple meaning:</b> ${f[1][3]}</p>`:''}<p><b>In this text:</b> ${f[1][4]}</p>`:`<h3>${raw}</h3><p>Meaning not available yet</p><p><a target="_blank" rel="noopener" href="https://translate.google.com/?sl=en&tl=bn&text=${encodeURIComponent(raw)}">🌐 Look up online (needs internet)</a></p>`)+`<button class="b" onclick="closeP()">Close</button>`;
+$('pop').style.display='block'}
+function closeP(){$('pop').style.display='none';document.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'))}
+document.addEventListener('click',e=>{if(!e.target.closest('#pop')&&!e.target.classList.contains('w'))closeP()});
+function render(){const m=$('main');
+if(tab=='home'){m.innerHTML=`<h1>THE GARDEN PARTY</h1><p class="sub">Katherine Mansfield<br>Complete Bilingual English Learning PWA</p><div class="card">🌿 Tap any word while reading to see its Bengali meaning.</div>`+[['read','📖 Read the Story'],['search','🔤 Word Search'],['saq','📝 SAQ'],['broad','📘 Broad Questions'],['bm','🔖 Bookmarks'],['prog','📊 My Progress']].map(c=>`<button class="b" style="width:100%;padding:16px" onclick="go('${c[0]}')">${c[1]}</button>`).join('')}
+else if(tab=='read')reader();
+else if(tab=='search'){m.innerHTML=`<h2>Search a Word</h2><input id="q" placeholder="Type a word…" oninput="sw()" style="width:100%"><div id="res"></div>`}
+else if(tab=='ana')$('main').innerHTML='<h2>Analysis</h2>'+lesson.analysis.map(x=>`<div class="card"><h3 style="color:var(--gr)">${x.t}</h3><p>${x.en}</p><p class="bn">${x.bn}</p></div>`).join('');
+else if(tab=='saq')qs('saqs','saq');
+else if(tab=='broad')qs('broad','br');
+else if(tab=='bm')bms();else prog()}
+function gloss(z){return '<i>শব্দে শব্দে (আনুমানিক): </i>'+(z.match(/[A-Za-z][A-Za-z'’-]*/g)||[]).map(w=>{const f=find(w);return f?f[1][0].split(' / ')[0].split(' (')[0]:w}).join(' ')}
+function reader(){const p=lesson.pages[cur];if(!S.read.includes(p.n)){S.read.push(p.n);save()}
+const bm=S.bm.includes('p'+p.n);
+$('main').innerHTML=`<div class="bar"><button class="b" onclick="pg(-1)">←</button><select onchange="cur=+this.value;reader()">${lesson.pages.map((x,i)=>`<option value="${i}" ${i==cur?'selected':''}>Page ${x.n}</option>`).join('')}</select><button class="b" onclick="pg(1)">→</button><button class="b" onclick="tbm('p${p.n}')">${bm?'★':'☆'}</button></div>
+<div class="bar"><button class="b" onclick="fz(-2)">A−</button><button class="b" onclick="fz(2)">A+</button><button class="b" onclick="lsp(-.2)">↕−</button><button class="b" onclick="lsp(.2)">↕+</button><button class="b" onclick="dk()">🌙</button><button class="b" onclick="document.body.classList.toggle('read')">Focus</button><select onchange="mode=this.value;reader()"><option value="en" ${mode=='en'?'selected':''}>English</option><option value="bn" ${mode=='bn'?'selected':''}>বাংলা</option><option value="both" ${mode=='both'?'selected':''}>Both</option><option value="sent" ${mode=='sent'?'selected':''}>Sentence</option></select></div>
+${vlist().length?'':'<div class="card" style="font-size:14px">🔈 No English voice found. On Android: Settings → System → Languages → Text-to-speech → Google Speech Services → install English voice data, then reload.</div>'}<audio controls preload="none" src="audio/page${p.n}.mp3" style="width:100%" onerror="this.style.display='none'"></audio><div class="bar"><button class="b" onclick="tts()">▶ Read</button><button class="b" onclick="SS&&SS.pause()">⏸</button><button class="b" onclick="SS&&SS.cancel()">⏹</button><select style="max-width:150px" onchange="S.voice=this.value;save()">${vopts()}</select><select onchange="rate=+this.value"><option value="0.7">Slow</option><option value="1" selected>Normal</option><option value="1.3">Fast</option></select></div>
+<h2>${p.head} <small>(Page ${p.n})</small></h2><div id="text" style="font-size:${S.fs}px;line-height:${S.ls||1.7}">${mode=='sent'?p.paras.map(x=>(x.match(/[^.!?]+[.!?"']*\s*/g)||[x]).map(z=>`<p style="margin:0 0 .5em">${wrap(z)}<br><span class="bn" style="display:block;font-size:.85em">${lesson.sbn[NK(z)]||gloss(z)}</span></p>`).join('')).join(''):mode!='bn'?p.paras.map(x=>`<p>${wrap(x)}</p>`).join(''):''}${mode!='en'?`<p class="bn">${p.bn}</p>`:''}</div>
+${p.fn.length?`<div class="fn">${p.fn.map((f,i)=>{const [w,d]=f.split(' : ');return `<div>${lesson.pages.slice(0,cur).reduce((a,x)=>a+x.fn.length,0)+i+1}. <span class="w" onclick="showF('${w}','${d.replace(/'/g,"")}')">${w}</span> : ${d}</div>`}).join('')}</div>`:''}`}
+function showF(w,d){const f=find(w);$('pop').innerHTML=`<h3>${w}</h3><p><b>Textbook:</b> ${d}</p><p><b>বাংলা অর্থ:</b> ${f?f[1][0]:'Meaning not available yet'}</p><button class="b" onclick="closeP()">Close</button>`;$('pop').style.display='block'}
+function pg(d){cur=Math.max(0,Math.min(lesson.pages.length-1,cur+d));reader();scrollTo(0,0)}
+function fz(d){S.fs=Math.max(14,Math.min(30,S.fs+d));save();reader()}
+function lsp(d){S.ls=Math.max(1.3,Math.min(2.5,+(S.ls+d).toFixed(1)));save();reader()}
+function dk(){S.dark=!S.dark;save();document.body.classList.toggle('dark',!!S.dark)}
+function tbm(k){const i=S.bm.indexOf(k);i<0?S.bm.push(k):S.bm.splice(i,1);save();tab=='read'?reader():render()}
+function vlist(){if(!SS)return[];const g=/natural|neural|online|google|enhanced|premium|siri|samantha|daniel|serena/i;
+return SS.getVoices().filter(v=>/^en/i.test(v.lang)).sort((a,b)=>g.test(b.name)-g.test(a.name))}
+function vopts(){return vlist().map(v=>`<option ${v.name==S.voice?'selected':''}>${v.name}</option>`).join('')}
+if(SS)SS.onvoiceschanged=()=>{if(tab=='read'&&!SS.speaking)reader()};
+function tts(){if(!SS){alert('Speech not supported on this browser');return}SS.cancel();const vs=vlist(),v=vs.find(x=>x.name==S.voice)||vs[0];
+lesson.pages[cur].paras.forEach(t=>t.replace(/[\u00B2\u00B3\u2074-\u2079\u00B9]/g,'').match(/[^.!?]+[.!?"']*\s*/g)?.forEach(s=>{const u=new SpeechSynthesisUtterance(s);if(v){u.voice=v;u.lang=v.lang}else u.lang='en-GB';u.rate=rate*0.95;u.pitch=1;SS.speak(u)}))}
+function sw(){const v=$('q').value.trim().toLowerCase();if(!v){$('res').innerHTML='';return}
+const hits=Object.keys(lesson.vocab).filter(k=>k.includes(v));
+$('res').innerHTML=hits.map(k=>{const e=lesson.vocab[k];const pp=lesson.pages.filter(p=>new RegExp('\\b'+k,'i').test(p.paras.join(' '))).map(p=>p.n).join(', ');
+return `<div class="card"><h3 style="margin:0;color:var(--gr)">${k}</h3>${e[0]} · ${e[1]} · <i>${e[2]}</i><br>${e[3]}<br><small>Context: ${e[4]}<br>Pages: ${pp||'—'}</small></div>`}).join('')||'<p>Meaning not available yet</p>'}
+function qs(key,sk){const L=lesson[key];$('main').innerHTML=`<h2>${key=='saqs'?'Short Answer Questions':'Broad Questions'}</h2>`+L.map((x,i)=>`<details ontoggle="if(this.open)seen('${sk}',${i})"><summary>${x.q}<br><span class="tag">${x.tag}</span></summary><div class="card">${key=='saqs'?`<p><b>Answer:</b> ${x.a}</p><p class="bn">${x.bn}</p><b>Key points:</b><ul>${x.k.map(k=>`<li>${k}</li>`).join('')}</ul>`:`<p><b>Introduction:</b> ${x.intro}</p><p><b>Main Discussion:</b> ${x.main}</p><p><b>Textual Reference:</b> ${x.ref}</p><p><b>Conclusion:</b> ${x.concl}</p><p class="bn"><b>বাংলা ব্যাখ্যা:</b> ${x.bn}</p>`}<button class="b" onclick="tbm('${sk}${i}')">${S.bm.includes(sk+i)?'★ Saved':'☆ Save'}</button></div></details>`).join('')}
+function seen(k,i){if(!S[k].includes(i)){S[k].push(i);save()}}
+function bms(){const L=S.bm.map(k=>k[0]=='p'?`<button class="b" onclick="cur=lesson.pages.findIndex(x=>x.n==${k.slice(1)});go('read')">Page ${k.slice(1)}</button>`:k.startsWith('saq')?`<div class="card">${lesson.saqs[+k.slice(3)].q}</div>`:`<div class="card">${lesson.broad[+k.slice(2)].q}</div>`);$('main').innerHTML='<h2>Bookmarks</h2>'+(L.join('')||'<p>Nothing saved yet.</p>')}
+function prog(){$('main').innerHTML=`<h2>My Progress</h2><div class="card">Pages read: ${S.read.length} / ${lesson.pages.length} (loaded)<br>Words explored: ${S.words.length}<br>SAQs studied: ${S.saq.length}<br>Broad questions studied: ${S.br.length}<br>Bookmarks: ${S.bm.length}<br><small>Stored only on this device.</small></div>`}
+document.body.classList.toggle('dark',!!S.dark);nav();render();
+</script></body></html>
